@@ -1,0 +1,42 @@
+TIFF 6.0 Specification
+Final—June 3, 1992
+9
+If you need more than 10 tags, we suggest that you reserve a single private tag,
+define it as a LONG TIFF data type, and use its value as a pointer (offset) to a
+private IFD or other data structure of your choosing. Within that IFD, you can use
+whatever tags you want, since no one else will know that it is an IFD unless you
+tell them.
+Submitting a Proposal
+Any person or group that wants to propose a change or addition to the TIFF speci-
+fication should prepare a proposal that includes the following information:
+• Name of the person or group making the request, and your affiliation.
+• The reason for the request.
+• A list of changes exactly as you propose that they appear in the specification.
+Use inserts, callouts, or other obvious editorial techniques to indicate areas of
+change, and number each change.
+• Discussion of the potential impact on the installed base.
+• A list of contacts outside your company that support your position. Include
+their affiliation.
+Please send your proposal to devsup-person@adobe.com.
+The TIFF Advisory Committee
+The TIFF Advisory Committee is a working group of TIFF experts from a number
+of hardware and software manufacturers. It was formed in the spring of 1991 to
+provide a forum for debating and refining proposals for the 6.0 release of the TIFF
+specification.
+If you are a TIFF expert and think you have the time and interest to work on this
+committee, contact devsup-person@adobe.com for further information. For the
+TIFF 6.0 release, the group met every two or three months, usually on the west
+coast of the U.S. Accessibility via Internet email is a requirement for membership,
+since that has proven to be an invaluable means for getting work done between
+meetings.
+Other TIFF Extensions
+The Aldus TIFF sections on CompuServe and AppleLink
+(new location is under
+construction; check the Adobe WWW home page (http://www.adobe.com) for
+future developements) will contain proposed TIFF extensions from other compa-
+nies that are not approved by Adobe as part of Baseline TIFF.
+These proposals typically represent specialized uses of TIFF that do not fall
+within the domain of publishing or general graphics or picture interchange. Gen-
+erally, these features will not be widely supported. If you do write files that incor-
+porate these extensions, be sure to either not call them TIFF files or mark them in
+some way so that they will not be confused with mainstream TIFF files.

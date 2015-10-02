@@ -1,0 +1,973 @@
+PNG File Format Summary
+	
+Share on stumbleuponShare on redditShare on twitterShare on facebookMore Sharing Services
+
+Also Known As: Portable Network Graphic Format
+
+Type 	Bitmap
+Colors 	1-bit to 48-bit
+Compression 	LZ77 variant
+Maximum Image Size 	2Gx2G pixels
+Multiple Images Per File 	No
+Numerical Format 	Big-endian
+Originator 	Thomas Boutell, Tom Lane, and many others
+Platform 	Any
+Supporting Applications 	Many shareware and commercial packages
+See Also 	GIF
+
+Usage
+PNG is capable of losslessly storing bi-level to 48-bit truecolor image data. It is designed specifically for network image data transmission and storage.
+
+Comments
+PNG is a well-designed and well-developed file format that is intended to replace CompuServe's GIF file format.
+
+Vendor specifications are available for this format.
+
+Sample images are available for this format.
+
+Code fragments are available for this format.
+
+PNG (pronounced "ping") is a bitmap file format used to transmit and store bitmapped images. PNG supports the capability of storing up to 16 bits (gray-scale) or 48 bits (truecolor) per pixel, and up to 16 bits of alpha data. It handles the progressive display of image data and the storage of gamma, transparency and textual information, and it uses an efficient and lossless form of data compression.
+
+Contents:
+File Organization
+File Details
+For Further Information
+
+PNG is a very new format created with the intention of offering the graphics and imaging communities an alternative to CompuServe's Graphics Interchange Format (GIF) and the legalities associated with the "pay-to-implement" aspects of that format. (See the section called "LZW Legal Issues" in Chapter 9, Data Compression.) The unofficial recursive derivation of the name "PNG" is "PNG's Not GIF."
+
+PNG was designed with the goals that it be a simple format, one that is easy to implement and completely portable, and one that meets or exceeds all of the functional capabilities of the GIF format. It is also necessary that PNG be freely available and unencumbered by licensing fees and patent disputes.
+
+PNG and GIF89a share the following features:
+
+    Format organized as a data stream
+
+    Lossless image data compression
+
+    Storage of index-mapped images containing up to 256 colors
+
+    Progressive display of interlaced image data
+
+    Transparent key color supported
+
+    Ability to store public and private user-defined data
+
+    Independent from hardware and operating system
+
+The following GIF features have been improved upon in PNG:
+
+    Legally unencumbered method of data compression
+
+    Faster progressive display interlacing scheme
+
+    Greater extensibility for storing user-defined data
+
+The following PNG features are not found in GIF:
+
+    Storage of truecolor images of up to 48 bits per pixel
+
+    Storage of gray-scale images of up to 16 bits per pixel
+
+    Full alpha channel
+
+    Gamma indicator
+
+    CRC method of data stream corruption detection
+
+    Standard toolkit for implementing PNG readers and writers
+
+    Standard set of benchmark images for testing PNG readers
+
+The following GIF features are not found in PNG v1.0:
+
+    Capability of storing multiple images
+
+    Support of storage of animation sequences
+
+    Payment of a licensing fee required to sell software that reads or writes the GIF file format
+
+Unlike most file formats, which are created by one or two programmers without much thought for the future expansion of the format, PNG was authored by a committee of interested implementors and GIF detractors (revision 1.0 of the PNG specification lists 23 authors) headed by Thomas Boutell.
+
+PNG also holds the distinction of being one of the better designed file formats, allowing additional features to be added to the format without compromising existing functionality, and without forcing modifications to existing PNG-using software.
+
+We are happy to report that the PNG specification is one of the most complete, well-thought-out, and well-written file format specifications yet examined by the authors of this book.
+File Organization
+
+A PNG format file (or data stream) consists of an 8-byte identification signature followed by three or more chunks of data. A chunk is an independent block of data conforming to a specifically defined structure. Chunks carry their own identification as to their internal format and are read sequentially from the beginning to the end of the file or data stream.
+
+Several other file formats also use the concept of blocks or chunks of data. Most notably among these formats are GIF, IFF, and RIFF. Data in these formats is read serially from the beginning to the end of the file. This design makes it unnecessary to seek to different parts of the file using offset values; it also makes these types of formats ideal for use with networking and data transmission protocols. While each of these formats is usually thought of as a file format, it is more accurate to think of them as a data stream that is captured and stored to a file.
+
+PNG defines four standard chunks, called critical chunks, that must be supported by every PNG file reader and writer. These chunks are the following:
+
+The header chunk (IHDR)
+
+    The header chunk contains basic information about the image data and must appear as the first chunk, and there must only be one header chunk in a PNG data stream.
+
+The palette chunk (PLTE)
+
+    The palette chunk stores the colormap data associated with the image data. This chunk is present only if the image data uses a color palette and must appear before the image data chunk.
+
+The image data chunk (IDAT)
+
+    The image data chunk stores the actual image data, and multiple image data chunks may occur in a data stream and must be stored in contiguous order.
+
+The image trailer chunk (IEND)
+
+    The image trailer chunk must be the final chunk and marks the end of the PNG file or data stream.
+
+Of these chunks, IHDR, IDAT, and IEND must appear in every PNG data stream.
+
+Consider the following two basic types of PNG files, one with a color palette and one without:
+
+Signature
+
+IHDR Chunk
+
+IDAT Chunk
+
+IEND Chunk
+
+Signature
+
+IHDR Chunk
+
+PLTE Chunk
+
+IDAT Chunk
+
+IEND Chunk
+
+As you can see, the only difference in these two basic PNG formats is the presence of the palette chunk.
+
+Optional chunks, called ancillary chunks, may be ignored by PNG file readers and need not be written by PNG file writers. However, failing to support ancillary chunks may leave a PNG reader unable to properly render many PNG images. The images may appear too dark or too light, or the images may display in some other way not intended by the image's creator. It is therefore recommended that PNG-using software support the interpretation of most standard ancillary chunks (in particular, the Image Gamma chunk).
+
+Together, the critical and ancillary chunks defined in the PNG specification proper are termed standard chunks. The people who maintain the PNG specification are also keeping a list of additional chunks, termed special-purpose public chunks. These chunks are expected to be less widely implemented than the standard chunks but may be of use for some applications. The list of special-purpose public chunks is expected to be extended from time to time. Applications may also define private chunks for their own purposes, if they wish to store data that need not be interpreted by other applications.
+
+Here is a summary of all of the standard and special-purpose chunks defined by revision 1.0 of the PNG specification and associated documentation. The chunks in this list are arranged by the relative order (but not the only order) that they could appear in a PNG data stream.
+
+Table PNG-1: PNG Chunks
+
+Chunk Type
+	
+
+Multiple
+	
+
+Optional
+	
+
+Position
+
+IHDR
+	
+
+No
+	
+
+No
+	
+
+First chunk
+
+cHRM
+	
+
+No
+	
+
+Yes
+	
+
+Before PLTE and IDAT
+
+gAMA
+	
+
+No
+	
+
+Yes
+	
+
+Before PLTE and IDAT
+
+sBIT
+	
+
+No
+	
+
+Yes
+	
+
+Before PLTE and IDAT
+
+PLTE
+	
+
+No
+	
+
+Yes
+	
+
+Before IDAT
+
+bKGD
+	
+
+No
+	
+
+Yes
+	
+
+After PLTE and before IDAT
+
+hIST
+	
+
+No
+	
+
+Yes
+	
+
+After PLTE and before IDAT
+
+tRNS
+	
+
+No
+	
+
+Yes
+	
+
+After PLTE and before IDAT
+
+oFFs
+	
+
+No
+	
+
+Yes
+	
+
+Before IDAT
+
+pHYs
+	
+
+No
+	
+
+Yes
+	
+
+Before IDAT
+
+sCAL
+	
+
+No
+	
+
+Yes
+	
+
+Before IDAT
+
+IDAT
+	
+
+Yes
+	
+
+No
+	
+
+Contiguous with other IDATs
+
+tIME
+	
+
+No
+	
+
+Yes
+	
+
+Any
+
+tEXt
+	
+
+Yes
+	
+
+Yes
+	
+
+Any
+
+zTXt
+	
+
+Yes
+	
+
+Yes
+	
+
+Any
+
+fRAc
+	
+
+Yes
+	
+
+Yes
+	
+
+Any
+
+gIFg
+	
+
+Yes
+	
+
+Yes
+	
+
+Any
+
+gIFt
+	
+
+Yes
+	
+
+Yes
+	
+
+Any
+
+gIFx
+	
+
+Yes
+	
+
+Yes
+	
+
+Any
+
+IEND
+	
+
+No
+	
+
+No
+	
+
+Last chunk
+
+File Details
+
+The PNG signature is eight bytes in length and contains information used to identify a file or data stream as conforming to the PNG specification.
+
+typedef struct _PngSignature
+{
+    BYTE Signature[8];  /* Identifier (always 89504E470D0A1A0Ah) */
+} PNGSIGNATURE;
+
+Signature is eight bytes in length and contains the values 89h 50h 4Eh 47h 0Dh 0Ah 1Ah 0Ah ("\x89PNG\r\n\x1A\n"). This seemingly random sequence of values has quite a few practical uses. The first byte value, 89h, is an 8-bit value used to identify the file as containing binary data. If the 8th bit were stripped from the file (courtesy of a 7-bit data channel), this value would then be changed to 09h and would provide an indication of how the file became corrupt.
+
+The bytes that follow do the following:
+
+    Allow the data stream to be visually identified ("PNG")
+
+    Provide detection of a file transfer that alters the newline sequences ("\r\n" would become "\r", "\n" or "\n\r")
+
+    Stops the listing of the PNG data stream on the MS-DOS operating system (Control-Z [""])
+
+    Detects file transfer CR/LF translation problems (the final newline)
+
+Following the signature are three or more PNG data chunks. All PNG chunks have the same basic format and may contain a variable length payload of data.
+
+typedef struct _PngChunk
+{
+    DWORD DataLength;   /* Size of Data field in bytes */
+    DWORD Type;         /* Code identifying the type of chunk */
+    BYTE  Data[];       /* The actual data stored by the chunk */
+    DWORD Crc;          /* CRC-32 value of the Type and Data fields */
+} PNGCHUNK;
+
+DataLength is the number of bytes stored in the Data field. This value may be in the range 0 to (2^31)-1.
+
+Type is a 4-byte code identifying the type of data stored in the chunk. Each byte of this field may contain an uppercase or lowercase ASCII letter value (A-Z, a-z). For example, the chunk type IHDR would be identified by the value 69484452h in the Type field. PNG readers should treat Type codes as 32-bit literal values and not character strings. The fact that type codes are readable ASCII is primarily a convenience to humans.
+
+Data is the actual data stored in the chunk. This field may be zero-length if a chunk has no associated data.
+
+Crc is the CRC-32 value calculated for the Type and Data fields. This value is used to determine whether the data in the chunk has been corrupted. PNG uses the CRC algorithm defined by ISO 3309 and ITU-T V.42.
+
+Chunks range in size from 12 bytes (no data) to ((2^31)-1)+12 bytes. Chunks are always aligned on byte boundaries and therefore never require any alignment padding.
+Critical Chunks
+
+This section describes the standard chunks that must be supported by every PNG file reader and writer.
+Header chunk
+
+The header chunk contains information on the image data stored in the PNG file. This chunk must be the first chunk in a PNG data stream and immediately follows the PNG signature. The header chunk data area is 13 bytes in length and has the following format:
+
+typedef struct _IHDRChunk
+{
+    DWORD Width;        /* Width of image in pixels */
+    DWORD Height;       /* Height of image in pixels */
+    BYTE BitDepth;      /* Bits per pixel or per sample */
+    BYTE ColorType;     /* Color interpretation indicator */
+    BYTE Compression;   /* Compression type indicator */
+    BYTE Filter;        /* Filter type indicator */
+    BYTE Interlace;     /* Type of interlacing scheme used */
+} IHDRCHUNK;
+
+Width and Height are the width and height of the bitmap in pixels. These fields must each contain a value in the range 1 to (2^31)-1.
+
+BitDepth is the number of bits per pixel for indexed color images, and the number of bits per sample for gray-scale and truecolor images. Indexed color images may have a BitDepth value of 1, 2, 4, or 8. Gray-scale images may have BitDepth values of 1, 2, 4, 8, and 16. Only BitDepth values of 8 and 16 are supported for truecolor, truecolor with alpha data, and gray-scale with alpha data images.
+
+ColorType indicates how the image data is to be interpreted. Valid values are 0 (gray-scale), 2 (truecolor), 3 (indexed color), 4 (gray-scale with alpha data), and 6 (truecolor with alpha data).
+
+Compression indicates the type of compression used on the image data. Currently, the only valid value is 0, indicating that the Deflate compression method is used. Other compression methods may be defined in future extensions of PNG.
+
+Filter specifies the type of filtering performed on the image data before compression. Currently, the only valid value is 0, indicating the adaptive filtering methods described in the PNG specification. Other filtering methods may be defined in future extensions of PNG. The filter value does not indicate whether the image data has been filtered; only the filter type byte at the start of each scan line can indicate that image data was filtered. Note that it is not a requirement that image data must be filtered before it is compressed.
+
+Interlace indicates the interlacing algorithm used to store the image data--or more precisely, the transmission order of the pixel data. The values defined for this field are 0 (no interlacing) and 1 (Adam7 interlacing).
+Palette chunk
+
+The palette (PLTE) chunk is always found in PNG data streams that contain indexed-color image data; this is indicated when the Color field of the header chunk contains a value of 3. Truecolor PNG data streams (Color values 2 and 6) may also contain a palette chunk that non-truecolor display programs may use as a palette to quantize the image data. There will never be more than one palette chunk per PNG data stream.
+
+The palette chunk may be from 3 to 768 bytes in length and has the following format:
+
+typedef struct _PLTEChunkEntry
+{
+    BYTE Red;           /* Red component (0 = black, 255 = maximum) */
+    BYTE Green;         /* Green component (0 = black, 255 = maximum) */
+    BYTE Blue;          /* Blue component (0 = black, 255 = maximum) */
+} PLTECHUNKENTRY;
+PLTECHUNKENTRY PLTEChunk[];
+
+PLTEChunk is an array containing 1 to 256 PLTECHUNKENTRY elements. Each PLTECHUNKENTRY contains three fields, Red, Green, and Blue, which store the red, green, and blue color values for that palette entry respectively.
+Image Data chunk
+
+The Image Data (IDAT) chunk stores the actual image data. The image data is always compressed, as required by the PNG specification. The image data may be stored in multiple contiguous IDAT chunks to make it easier for a PNG writer to buffer the compressed image data. There are no boundaries in the compressed data stream, so IDAT chunks may range in size from 0 to (2^31)-1 bytes in length.
+Image Trailer chunk
+
+The final chunk in a PNG data stream is the Image Trailer (IEND) chunk. This chunk does not contain any associated data.
+Ancillary Chunks
+
+PNG v1.0 defines 10 ancillary chunks that may appear in a PNG data stream. Several of these chunks provide support for storing information that may be required for proper interpretation of the image data (such as the Image Gamma chunk). A brief description of the format of the Data field of each of these chunks is given below. Refer to the PNG specification on the CD-ROM for more detailed information on these chunks.
+Background Color chunk
+
+The Background Color chunk specifies the background color of the image. Note, however, that PNG readers may disregard this chunk and use any background color value they choose.
+
+The data format of the background color chunk varies depending upon the format of the image data, as indicated by the ColorType field in the IHDR chunk. For an indexed-color image (ColorType value 3), the data is a single byte containing the index of the palette color to use as the background:
+
+typedef struct _bKGDChunkEntry
+{
+    BYTE Index;    /* Index of background color in palette */
+} BKGDCHUNKENTRY;
+
+For gray-scale data, with or without alpha channel data (ColorType values 0 and 4), this chunk stores a 2-byte value specifying the gray level to be used as the background value:
+
+typedef struct _bKGDChunkEntry
+{
+    WORD Value;   /* Background level value */
+} BKGDCHUNKENTRY;
+
+For truecolor images, with or without alpha channel data (ColorType values 2 and 6), the background chunk stores three 2-byte values specifying the RGB color used for the background:
+
+typedef struct _bKGDChunkEntry
+{
+    WORD Red;   /* Red background sample value */
+    WORD Green; /* Green background sample value */
+    WORD Blue;  /* Blue background sample value */
+} BKGDCHUNKENTRY;
+
+Primary Chromaticities and White Point chunk
+
+The Primary Chromaticities and White Point chunk stores information on RGB values based on the 1931 CIE XYZ colorspace. Only the x and y chromaticities are specified, and they are represented by values multiplied by 100,000.
+
+typedef struct _cHRMChunkEntry
+{
+    DWORD WhitePointX;   /* White Point x value */
+    DWORD WhitePointY;   /* White Point y value  */
+    DWORD RedX;          /* Red x value */
+    DWORD RedY;          /* Red y value */
+    DWORD GreenX;        /* Green x value */
+    DWORD GreenY;        /* Green y value */
+    DWORD BlueX;         /* Blue x value */
+    DWORD BlueY;         /* Blue y value */
+} CHRMCHUNKENTRY;
+
+Image Gamma chunk
+
+The Image Gamma chunk stores the original gamma value of the image with respect to the original scene. The stored value is the gamma multiplied by 100,000. Note that it is "strongly" recommended by the PNG authors that decoders implement the gamma chunk.
+
+typedef struct _gAMAChunkEntry
+{
+    DWORD Gamma;    /* Gamma value */
+} GAMACHUNKENTRY;
+
+Image Histogram chunk
+
+The Image Histogram chunk stores data on the approximate usage frequency of each color in a palette. This chunk contains an array of 2-byte elements, one element per entry in the color palette.
+
+typedef struct _hISTChunkEntry
+{
+    WORD Histogram[];    /* Histogram data */
+} HISTCHUNKENTRY;
+
+Physical Pixel Dimension chunk
+
+The Physical Pixel Dimension chunk specifies the intended resolution for display of the image.
+
+typedef struct _pHYsChunkEntry
+{
+   DWORD PixelsPerUnitX;    /* Pixels per unit, X axis */
+   DWORD PixelsPerUnitY;    /* Pixels per unit, Y axis */
+   BYTE  UnitSpecifier;     /* 0 = unknown, 1 = meter */
+} PHYSCHUNKENTRY;
+
+Significant Bits chunk
+
+The Significant Bits chunk indicates the bit depth of the original image data. If a PNG writer needs to store image data of an unsupported bit depth, the data must be padded to the next greater supported bit depth to be stored. For example, to store RGB data with a resolution of five bits per sample (RGB555) using PNG, the image data would first need to be scaled up to an 8-bit sample depth (RGB888). The Significant Bits chunk would then store the bit depths of the original image data components.
+
+There are four possible formats of the data in this chunk; the one used depends upon the format of the image data (as indicated by the ColorType field in the IHDR chunk):
+
+/* Gray-scale (ColorType 0) image data */
+typedef struct _sBITChunkEntry
+{
+    BYTE GrayscaleBits;    /* Gray-scale (ColorType 0) significant bits */
+} SBITCHUNKENTRY;
+
+/* Truecolor or indexed-color (ColorType 2 or 3) image data */
+typedef struct _sBITChunkEntry
+{
+    BYTE RedBits;     /* Red significant bits */
+    BYTE GreenBits;   /* Green significant bits */
+    BYTE BlueBits;    /* Blue significant bits  */
+} SBITCHUNKENTRY;
+
+/* Gray-scale with alpha channel (ColorType 4) image data */
+typedef struct _sBITChunkEntry
+{
+    BYTE GrayscaleBits; /* Gray-scale significant bits */
+    BYTE AlphaBits;     /* Alpha channel significant bits */
+} SBITCHUNKENTRY;
+
+/* Truecolor with alpha channel (ColorType 6) image data */
+typedef struct _sBITChunkEntry
+{
+    BYTE RedBits;     /* Red significant bits */
+    BYTE GreenBits;   /* Green significant bits */
+    BYTE BlueBits;    /* Blue significant bits  */
+    BYTE AlphaBits;   /* Alpha channel significant bits */
+} SBITCHUNKENTRY;
+
+Textual Data chunk
+
+The Textual Data chunk is typically used to store human-readable information, such as the name of the author of the image and the copyright notice, within a PNG file. The data of this chunk has the following structure:
+
+typedef struct _tEXtChunkEntry
+{
+    char Keyword[];      /* Type of information stored in Text */
+    BYTE NullSeparator;  /* NULL character used a delimiter */
+    char Text[];         /* Textual data */
+} TEXTCHUNKENTRY;
+
+Keyword is a field of character data with a length of 1 to 79 bytes. This field may contain any printable Latin-1 character except NULL. Spaces are also allowed.
+
+NullSeparator is a single byte initialized to 0. This field acts as a delimiter to separate the Keyword and Text fields.
+
+Text is a field of character data that is the actual textual data stored in the chunk. The length of this field is determined from the value of the DataLength field in the chunk header.
+
+The value of Keyword indicates intellectual content information associated with the textual data stored in the Text field. The following keywords are defined by PNG v1.0:
+
+Title
+Author
+Description
+Copyright
+Creation Time
+Software
+Disclaimer
+Warning
+Source
+Comment
+
+Additional keywords can be defined though public registration or can be invented by individual applications.
+Image Last-Modification Time chunk
+
+The Image Last-Modification Time chunk stores the time the image was last modified (rather than the time the image was first created). The format of this chunk's data is as follows:
+
+typedef struct tIMEChunkEntry
+{
+    WORD Year;      /* Year value (such as 1996) */
+    BYTE Month;     /* Month value (1-12) */
+    BYTE Day;       /* Day value (1-31) */
+    BYTE Hour;      /* Hour value (0-23) */
+    BYTE Minute;    /* Minute value (0-59) */
+    BYTE Second;    /* Second value (0-60) */
+} TIMECHUNKENTRY;
+
+Transparency chunk
+
+The Transparency chunk stores a transparency value (key color) for a PNG image that does not contain associated alpha-channel data. Truecolor and gray-scale pixel values that match the transparency color are to be considered transparent (alpha value of 0), and all other pixels are regarded as opaque.
+
+Indexed color images store an array of alpha values, up to one per element in the palette. These transparency values are treated as full alpha values. Any palette entries that do not have a corresponding transparency value are considered to have a default value of 255 (fully opaque).
+
+There are three possible formats of the data in this chunk, depending on the format of the image data, as indicated by the ColorType field in the IHDR chunk:
+
+/* Gray-scale (ColorType 0) image data */
+typedef struct _tRNSChunkEntry
+{
+    WORD TransparencyValue;    /* Transparent color */
+} TRNSCHUNKENTRY;
+
+/* Truecolor (ColorType 2) image data */
+typedef struct _tRNSChunkEntry
+{
+    WORD RedTransValue;        /* Red sample of transparent color */
+    WORD GreenTransValue;      /* Green sample of transparent color */
+    WORD BlueTransValue;       /* Blue sample of transparent color */
+} TRNSCHUNKENTRY;
+
+/* Indexed-color (ColorType 3) image data */
+typedef struct _tRNSChunkEntry
+{
+    BYTE TransparencyValues[];  /* Transparent colors */
+} TRNSCHUNKENTRY;
+
+Compressed Textual Data chunk
+
+The Compressed Textual Data chunk is used to store a large block of textual data in a compressed format. This chunk has the same format as the Textual Data chunk, but the Text field contains data compressed using the Deflate compression method used by PNG for compressing image data.
+Image Data
+
+PNG image data is laid out as a bitmap with scan lines running from left to right and from top to bottom. Pixels are always packed into scan lines and do not use any filler bits to maintain byte boundary alignment between pixels. Pixels less than eight bits in size are packed into bytes with the leftmost pixel occupying the most significant bits of the byte.
+
+Scan lines always begin on byte boundaries and must always be padded to end on a byte boundary if necessary. Scan lines are also prepended with an extra "filter type" byte used during image compression and decompression. This extra byte indicates the type of filtering algorithm used to process the scan line. This byte is always present, even if filtering is not used, and it is not considered to be part of the actual image data.
+
+Image data up to eight bits in depth may have its values mapped to a color palette or may be stored directly in the bitmap data as gray-scale values. Truecolor pixels are always stored as three separate color samples, one each for red, green, and blue. A fourth sample for alpha-channel data may also be included with each truecolor pixel.
+
+Gray-scale and indexed color bitmaps contain one sample per pixel and are referred to as single-sample pixels. Every sample in an image is always the same size. This size is called bit depth and is the number of bits in the sample. A single component may range from 1 to 16 bits in depth. For indexed color data the bit depth indicates the maximum number of colors in the palette. PNG does not specifically define, nor preclude, the use of bi-level bitmaps.
+
+Multi-sample pixels contain two or more samples per pixel. Samples in multi-sample pixels may either be 8 or 16 bits in depth, and all of the samples in a pixel must be the same size. Multi-sample pixels may range from 16 to 64 bits in depth.
+
+For example, a typical gray-scale pixel contains a single 8-bit sample. A typical 24-bit RGB pixel contains three 8-bit samples, while a not-so-typical 64-bit RGBA pixel would contain four, 16-bit samples. Note that both single and multi-sample pixels that have samples of bit depths other than 8 or 16 are required to use a sample of the next greater size. For example, to store a 10-bit component, you would use a 16-bit sample. The unused bits in the sample are filled either by setting to zero (not recommended for bit depths less than 8 bits/sample, but for higher bit depths, zero-fill can significantly increase compression) or by linearly scaling the sample up to fill the range of possible values (recommended). The PNG authors recommend a quick method of scaling up by replication of the leftmost significant bits of the sample.
+Alpha Channel
+
+Gray-scale and truecolor images ranging from 8 to 16 bits in depth may also contain unassociated alpha-channel data called an alpha mask. If alpha mask data is used, each truecolor or gray-scale pixel will have an additional sample that stores the alpha-channel value for that pixel. Indexed color images may store alpha-channel data using the Transparency chunk.
+
+An alpha value indicates the transparency level of that pixel. The minimum value of the bit depth (always 0) indicates complete transparency, and the maximum value for the bit depth indicates full opacity. If no alpha mask is stored, the pixel is assumed to be fully opaque.
+Interlacing
+
+PNG image data is typically stored as a series of scan lines starting with the first line at the top of the image and progressing sequentially to the last line at the bottom of the image. PNG image data may also be stored in a specific interlace pattern to allow a progressive display of the image data from a low resolution to a full resolution display.
+
+Progressive display is most useful when receiving a PNG file over a slow transmission link (like the one that connects your Web browser to the Internet). The gradual "fade in" effect typically allows a user to discern the content of the image before it has displayed in its entirety. This feature is very useful if the image is a menu on a Web page or a picture that you don't wish to waste the time downloading.
+
+It is also a requirement that all PNG readers be able to interpret interlaced image data, although PNG viewers need not support the ability to perform a progressive display.
+
+A typical interlace scheme, such as that used by GIF, simply rearranges the order in which the scan lines are stored. For example, rather than storing lines sequentially as 0, 1, 2, 3, 4, 5, 6,..., an interlace scheme might store scan lines as 0, 8, 4, 9, 2, 10, 5,... in the file. GIF uses this type of interlacing scheme and stores (or transmits) image data in four passes of 1/8, 1/8, 1/4, and 1/2.
+
+PNG takes a somewhat different approach by interlacing images using a 7-pass scheme known as Adam7, after its inventor Adam M. Costello. Adam7 uses the first six passes to build up all even-numbered scan lines (0, 2, 4, 6,...) and the final (seventh) pass to fill in the remaining odd-numbered scan lines (1, 3, 5, 7...) in the image.
+
+Rather than containing the pixels for entire scan lines, the initial six passes contain specific pixels of only every other scan line. The first two passes each contain 1/64th of the pixels in the image. The third pass contains 1/32nd, the fourth pass 1/16th, the fifth pass 1/8th, the sixth pass 1/4th, and the seventh (final) pass 1/2 of the image data.
+
+The image itself is built up on the display, first as 8x8 squares, then 4x8 rectangles, then 4x4 squares, then 2x4 rectangles, then 2x2 squares, and then 1x2 rectangles. The final pass fills in the pixels of the odd-numbered scan lines.
+
+Adam7 interlacing allows the progressive buildup of pixels to appear much more quickly on the display than it would if entire scan lines were displayed. The pixels in the image are also displayed in a more dispersed pattern, allowing the human eye to discern the typical interlaced PNG image after only 20 to 30 percent of the image data has been received, compared with the 50 percent or more needed from the GIF interlacing scheme.
+
+Note, however, that PNG's interlacing method does trade off a bit of size for speed. The GIF interlacing scheme simply rearranges the storage order of scan lines, and does not have much impact on the storage space per scan line. In the PNG scheme, each pass except the last carries non-adjacent pixels; for example, pass 1 contains every 8th pixel from every 8th line.
+
+On the average, there is less correlation between such pixels than there is between adjacent pixels. This means that compression is less effective on the interlaced data than it is on sequentially presented data, so the resulting file is bigger. Typically, an interlaced file will be up to 10 percent larger than an equivalent non-interlaced file. For most applications where interlacing is useful, this price is well worth paying in exchange for faster buildup of a useful image.
+
+Adam7 interlacing is performed using the filter pattern below. Uncompressed PNG image data is interlaced by first reproducing this 8x8 map over the entire bitmap. The image data is then scanned seven times, and the pixel values indicated by the map are read to determine what pixel values are stored or transmitted during each pass.
+
+1
+	
+
+6
+	
+
+4
+	
+
+6
+	
+
+2
+	
+
+6
+	
+
+4
+	
+
+6
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+
+5
+	
+
+6
+	
+
+5
+	
+
+6
+	
+
+5
+	
+
+6
+	
+
+5
+	
+
+6
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+
+3
+	
+
+6
+	
+
+4
+	
+
+6
+	
+
+3
+	
+
+6
+	
+
+4
+	
+
+6
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+
+5
+	
+
+6
+	
+
+5
+	
+
+6
+	
+
+5
+	
+
+6
+	
+
+5
+	
+
+6
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+	
+
+7
+
+Data compression
+
+PNG image data is always stored in a compressed format. Image data is compressed using a prediction of pixel values with differences compressed by a variation of the Deflate compression method. Deflate was created by Phil Katz and is used in the pkzip file archiving utility. This lossless compression method is fast, well-documented, and freely available, and it is supported by a large number of operating platforms.
+
+Deflate is a variation of the LZ77 compression algorithm originally patented (4,464,650) by Lempel, Ziv, Cohen, and Eastman in 1981. Deflate uses a variably sized sliding window and sorted hash tables to identify data patterns and compresses them using Huffman encoding. PNG uses a variation of Deflate that does not use sorted hash tables, and is therefore not subject to any patent claims or licensing agreements.
+
+Image data may be optionally filtered before it is compressed. Filtering normalizes the byte values in a scan line, allowing the Deflate compression algorithm to be more effective and producing smaller compressed data.
+
+All filtering algorithms are applied to the bytes in a scan line rather than to the pixels. Any alpha channel data present in the scan-line data is also filtered. And because a single filtering algorithm may not be effective when applied to an entire image, each scan line is filtered separately, and any or no filter may be applied to any line.
+
+Several types of predictive filters are defined for use on PNG image data. Filtering is applied to the data before it is compressed, and the reverse of the filter is applied after the image data is decompressed, restoring the data to its original values. All of the PNG filters are therefore completely reversible and lossless.
+
+The Sub filter stores the difference between a byte value of the current pixel and the value of the same byte in the previous pixel (the predictor). This method allows the same samples across multi-sample pixels to always be differenced. This is the same predictor algorithm used by the TIFF image file format.
+
+The Up filter stores the difference between the byte in the current pixel and the related byte in the same pixel of the previous scan line. The Average filter stores the differences between the current pixel from the average of the pixels just above and to the left.
+
+The Path filter uses a linear function to compute a value. The closest matching left, up, or upper left byte value is used as the predictor.
+For Further Information
+
+The complete PNG specification, special-purpose public chunks documentation, PNG implementation toolkit, and sample PNG images are available .
+
+The current PNG specification can be found at the following Web page:
+
+http://sunsite.unc.edu/boutell/png.html
+
+and the following FTP sites:
+
+ftp://swrinde.nde.swri.edu/pub/png/documents/
+ftp://ftp.uu.net:/textonly/png/documents/
+
+Your best Web source for PNG information and resources resides on Greg Roelofs' PNG group's homepage:
+
+http://quest.jpl.nasa.gov/PNG/
+
+Questions about PNG may be asked on the comp.graphics.misc newsgroup, or via email to:
+
+png-info@uunet.uu.net
+
+or directed to the principal author of the PNG specification:
+
+Thomas Boutell
+Email: boutell@boutell.com
+
+PNG developers may join the PNG mailing list. Send email to png-info@uunet.uu.net.
+
+Other PNG mailing lists include:
+
+png-list@dworkin.wustl.edu 	General PNG discussion
+png-announce@dworkin.wustl.edu 	Announcements related to PNG
+png-implement@dworkin.wustl.edu 	Implementation discussion
+
+These lists contain a general discussion of PNG, announcements related to PNG, and discussions regarding PNG implementation. To find out more about the mailing list server, send email to majordomo@dworkin.wustl.edu with the word "help" (and nothing else) in the message body.
+
+The official PNG FTP archive is:
+
+ftp://ftp.uu.net/textonly/png/
+
+A reference implementation in portable C of a PNG reader and writer is available at:
+
+ftp://ftp.uu.net/textonly/png/src/
+
+Test PNG images for your benchmarking pleasure are available from:
+
+ftp://ftp.uu.net/textonly/png/images/
+
+PNG materials, including a mirror of everything in ftp://ftp.uu.net/textonly/png/ can also be found at:
+
+ftp://swrinde.nde.swri.edu/pub/png/
+
+All programs on this site are in beta test and should be used carefully. In the case of questionable implementation, the specification is to be considered correct and the code in error.
+
+Group 42 is the author of the LIBPNG support library for developers using the PNG file format. Their Web page contains a developer's section that includes the LIBPNG library, PNG format specification, Compression Library, and Image Test Suite. A freeware version of this library is currently available. Group 42 may be reached at:
+
+Group 42, Inc.
+Voice: 800-520-0042
+Voice: 513-831-3400
+Email: info@group42.com
+WWW: http://www.group42.com/
+
+A good overview of PNG can be found in:
+
+    Crocker, Lee Daniel, "PNG: The Portable Network Graphic Format," Dr. Dobb's Journal, vol. 20, no. 232, July 1995, pp. 36-44. 
+
+The code for the above article is available at:
+
+ftp://ftp.mv.com/pub/ddj/1995/1195.07/ptot.zip
+
+A rather CompuServe-biased official press release is at:
+
+http://www.compuserve.com/new/news_rel/png2.html 

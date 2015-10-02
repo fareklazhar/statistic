@@ -1,0 +1,119 @@
+
+
+    ID: fdd000017
+    Short name: JPEG
+    Content categories: still-image
+    Format Category: encoding
+    Other facets: unitary, binary, sampled
+    Last significant FDD update: 2012-01-26
+    Draft status: Full
+
+
+Identification and description Explanation of format description terms
+Full name 	JPEG Image Encoding Family
+Description 	
+
+Family of image compression codecs specified in the various parts of ISO/IEC 10918 and ISO/IEC 14495 (and in the parallel ITU-T.81, 83, 84, 86, and 87 standards). ISO/IEC 10918-1 covers both lossy and lossless compression in several "modes of operation," not all of which have come into use. All modes are used for full color and grayscale continuous-tone images; they do not work well with bitonal or palette-color images. The lossy compression modes employ discrete cosine transforms (DCT) applied to 8-by-8-pixel Minimum Coded Unit (MCU) blocks, and other processes. Lossy compression is variable and governed by a number of parameters; typical settings provide from 10:1 to 20:1 reductions in file size.
+
+The lossy encodings specified in ISO/IEC 10918-1 include the important and common examples of baseline sequential (encode coefficients of a single block at a time in a zigzag manner; JPEG_DCT_BL) and progressive (encode similar-positioned coefficients of all blocks in one action, followed by the next positioned coefficients of all blocks, etc.; JPEG_DCT_PRG). These encodings and related matters are well described in the ISO specification and at Web sites like those cited in this description's Useful references. Some additional capabilities, including tiling and pyramidal tiling (JTIP), are provided by JPEG_DCT_EXT (ISO/IEC 10918-3:1997, "Extensions").
+
+Regarding lossless compression, an initial ("original") variant (JPEG_orig_LL) was specified in ISO/IEC 10918-1 but it was not widely supported in applications. This encoding was soon supplanted by JPEG-LS, specified in ISO/IEC 14495-1 and -2 (1999 and 2003, "Lossless and near-lossless, baseline and extensions"). One of the Huffman-encoded variants of original lossless, however, is used by Adobe's DNG_1_1.
+Production phase 	May be applied in initial-state picture creation; often used for middle- and final-state archiving or end-user delivery.
+Relationship to other formats
+    Has subtype 	JPEG_DCT_BL, JPEG DCT Compression Encoding, Baseline
+    Has subtype 	JPG_DCT_PRG, JPEG DCT Compression Encoding, Progressive
+    Has subtype 	JPEG_orig_LL, JPEG Original Lossless Compression (ISO/IEC 10918)
+    Has subtype 	JPEG_EXT, JPEG Compression Encoding, Extensions
+    Has subtype 	JPEG-LS, JPEG Lossless Compression Encoding (ISO/IEC 14495)
+    Used by 	JFIF_1_02, JFIF JPEG File Interchange Format, Version 1.02
+    Used by 	SPIFF, SPIFF Still Picture Interchange File Format
+    Used by 	JPEG_EXIF, JPEG Encoded File with Exif Metadata
+    Used by 	JTIF Image File Format, a variant of TIFF, not described at this Web site
+
+Local use Explanation of format description terms
+LC experience or existing holdings 	American Memory and other Library of Congress activities have created and archived extensive numbers of JPEG images. These are generally baseline sequential (some may be progressive) and are generally reduced-data derivatives of uncompressed master images.
+LC preference 	The Library's general preference for still image "masters" has been for uncompressed bitstreams, and rich metadata is always welcome. Thus TIFF_UNC_EXIF and TIFF_UNC have been the preference. In 2011-12, however, the Library began actively exploring the use of JPEG 2000 compression for master images; see JP2_FF. Meanwhile, for images only available in lossy compressed form, JPEG is acceptable, especially if wrapped as JPEG_EXIF (rich metadata).
+
+Sustainability factors Explanation of format description terms
+Disclosure 	Fully disclosed. Developed by the Joint Photographic Experts Group (JPEG), formally known as ISO/IEC JTC 1/SC 29/WG 10.
+    Documentation 	ISO/IEC 10918, parts 1, 2, 3, 4, 5, and 6. All carry the running title Information technology -- Digital compression and coding of continuous-tone still images. ISO/IEC 14495, parts 1 and 2, carrying the running title Information technology -- Lossless and near-lossless compression of continuous-tone still images. For a complete list, see Format specifications below in this description. The ITU-T equivalents are T.81, T.83, T.84, T.86, and T.87. Meanwhile, the standardization of two common wrapper format has been carried out by other bodies; see JFIF_1_02 and JPEG_EXIF.
+Adoption 	Very widely adopted in various devices (scanners, cameras, etc.) and supported by a large number of image software applications.
+    Licensing and patents 	Two patent suits have arisen regarding JPEG encoding. The first was brought in 2002 by Forgent Networks; the USPTO ruled Forgent's patent invalid in 2006. Beginning in 2007, another legal action began, brought by Global Patent Holdings; the USPTO set that company's claims aside in 2009.
+Transparency 	Depends upon algorithms and tools to read; will require sophistication to build tools.
+Self-documentation 	See the file format descriptions for JFIF_1_02, SPIFF, and JPEG_EXIF.
+External dependencies 	None.
+Technical protection considerations 	None.
+
+Quality and functionality factors Explanation of format description terms
+Still Image
+Normal rendering 	Good support.
+Clarity (high image resolution) 	Good, considering that the source data is limited to 8-bits-per-channel. For lossy compression, quality varies according to the sophistication of the encoding and the degree of compression applied. It is not clear to the compiler of this document whether some extensions (see JPEG_DCT_EXT) do or do not offer better quality than baseline. Most commentators agree that, at the same compression ratios, discrete cosine tranforms (DCT) yield less clarity than discrete wavelet transforms (DWT), used by J2K_C (JPEG 2000) and other compression algorithms. For lossless compression, the decompressed image as output should be the same as the image prior to compression.
+Color maintenance 	See the file format descriptions for JFIF_1_02, SPIFF, and JPEG_EXIF.
+Support for vector graphics, including graphic effects and typography 	No support for vector graphics.
+Support for multispectral bands 	No support in the formal specification; it may be that implementations for stereo or multipicture versions would permit the representation of multispectral data; Comments welcome.
+Functionality beyond normal rendering 	Various features supported in JPEG_DCT_EXT. There are also modes of operation for stereoscopic (3D) and multipicture versions, not described at this Web site at this time.
+
+File type signifiers Explanation of format description terms
+Tag 	Value 	Note
+Filename extension 	Not applicable.  	See the file format descriptions for JFIF_1_02, SPIFF, and JPEG_EXIF.
+Internet Media Type 	Not applicable.  	See the file format descriptions for JFIF_1_02, SPIFF, and JPEG_EXIF.
+Magic numbers 	Hex: 0xFF 0xD8
+	Start of Image (SOI) marker, used by most or all JPEG encodings. A subsequent magic number string identifies the wrapper; see the file format descriptions for JFIF_1_02, SPIFF, and JPEG_EXIF. See also Notes in this description
+Indicator for profile, level, version, etc. 	  	JPEG employs a variety of markers, including Start of Frame (SOF) and Application Segment (APP). See the Notes in this description; additional information is provided in other JPEG-related descriptions at this Web site.
+
+Notes Explanation of format description terms
+General 	
+
+The first two bytes of every JPEG stream are the Start Of Image (SOI) marker with values 0xFF 0xD8. Beyond that, JPEG images consist of a sequence of segments, each beginning with a marker, each of which begins with a 0xFF byte followed by a byte indicating what kind of marker it is.
+
+One important type of segment is called the application data segment, designated by application data markers, tagged with the prefix APP. APPs that appear near the head of a file can be construed as signifiers, as suggested by the Web documentation of the JHOVE JPEG module: "The file contains one of the following segments as the first segment of the file, not counting comments:
+
+    APP0 (0xE0) with identifier 0x4A, 0x46, 0x49, 0x46, 0x00, indicating a JFIF or JTIP file.
+    APP1 (0xE1) with identifier 0x45, 0x78, 0x69, 0x66, 0x00, 0x00, indicating an Exif file.
+    APP8 (0xE8) with identifier 0x53, 0x50, 0x49, 0x46, 0x46, 0x00, indicating a SPIFF file.
+    JPG7 (0xF7), also known as SOF55, indicating a JPEG-LS file." [Compiler's note: ISO/IEC 14495-1 associates SOF55, with "55" rendered as subscript, with 0xFFF7.]
+
+JPEG bitstreams are sometimes transmitted or exchanged as "raw" files. "Raw" is one of the JPEG profiles covered in JHOVE documentation cited above.
+
+One important set of marker codes is called Start of Frame (SOF); more than a dozen are named in the several ISO/IEC specifications, not all of which have come into active use. Here are four examples representing compression modes that archivists may encounter: (0) 0xFFC0, baseline DCT, (2) 0xFFC2, progressive DCT; (3) 0xFFC3, lossless (sequential), from ISO/IEC 10918-1; and (55) 0xFFF7, lossless (improved), from ISO/IEC 14495-1.
+
+JPEG images transform RGB color space to YCrCb (luminance-chrominance) color space before compression; viewer applications then transform the data back to RGB for display.
+
+Regarding the lossless compression in ISO/IEC 10918-1, the JPEG organization offers this comment at their Web site (consulted on January 24, 2012): "After creating the JPEG standard described above, the [JPEG] committee started to look at some of the criticisms of the existing standard. High amongst these was the poor quality (and lack of integration) of lossless coding in the standard. With this in mind, the committee developed the JPEG-LS (lossless) standard - ISO/IEC IS 14495-1 | ITU-T Recommendation T.87."
+History 	 
+
+Format specifications Explanation of format description terms
+
+    ISO/IEC 10918-1:1994. Information technology -- Digital compression and coding of continuous-tone still images: Requirements and guidelines. Reviewed and confirmed 2011. Corrigendum on patent information published in 2005. Corrigendum online at http://www.itu.int/rec/T-REC-T.81-200401-I!Cor1/en.
+    ISO/IEC 10918-2:1995. Information technology -- Digital compression and coding of continuous-tone still images: Compliance testing. Reviewed and confirmed in 2008.
+    ISO/IEC 10918-3:1997. Information technology -- Digital compression and coding of continuous-tone still images: Extensions. Reviewed and confirmed in 2008.
+    ISO/IEC 10918-3:1997/Amd 1:1999. Provisions to allow registration of new compression types and versions in the SPIFF header
+    ISO/IEC 10918-4:1999. Information technology -- Digital compression and coding of continuous-tone still images: Registration of JPEG profiles, SPIFF profiles, SPIFF tags, SPIFF colour spaces, APPn markers, SPIFF compression types and Registration Authorities (REGAUT).
+    ISO/IEC 10918-5:2013. Information technology -- Digital compression and coding of continuous-tone still images: JPEG File Interchange Format (JFIF)
+    ISO/IEC 10918-5:2013. Information technology -- Digital compression and coding of continuous-tone still images: Application to printing systems.
+    ISO/IEC 14495-1:1999 (corrected 2000). Information technology -- Lossless and near-lossless compression of continuous-tone still images: Baseline
+    ISO/IEC 14495-1:2003. Information technology -- Lossless and near-lossless compression of continuous-tone still images: Extensions. Reviewed and confirmed in 2008.
+    ITU-T Rec. T.81:1992. Information technology – Digital compression and coding of continuous-tone still images: Requirements and guidelines (same as ISO/IEC 10918-1). 2004 Corrigendum online at http://www.itu.int/rec/T-REC-T.81-200401-I!Cor1/en.
+    ITU-T Rec. T.83:1994. Information technology – Digital compression and coding of continuous-tone still images: Compliance testing (same as ISO/IEC 10918-2)
+    ITU-T Rec. T.84:1996, with Amd 1 1999. Information technology – Digital compression and coding of continuous-tone still images: Extensions and Provisions to allow registration of new compression types and versions in the SPIFF header (online at http://www.itu.int/rec/T-REC-T.84/en; same as ISO/IEC 10918-3, with Amd. 1)
+    ITU-T Rec. T.86:1998. Information technology -- Digital compression and coding of continuous-tone still images: Registration of JPEG profiles, SPIFF profiles, SPIFF tags, SPIFF colour spaces, APPn markers, SPIFF compression types and Registration Authorities (REGAUT) (online at http://www.itu.int/rec/T-REC-T.86/en; same as ISO/IEC 10918-4). An amendment was approved in June 2012.
+    ITU-T Rec. T.87:1998. Information technology – Lossless and near-lossless compression of continuous-tone still images – Baseline (online at http://www.itu.int/rec/T-REC-T.87/en; same as ISO/IEC 14495-1)
+
+
+Useful references
+URLs
+
+    www.jpeg.org (http://www.jpeg.org/). The Joint Photographic Experts Group Web site.
+    Wikipedia article "JPEG" (http://en.wikipedia.org/wiki/JPEG). Excellent description; consulted January 14, 2012.
+    comp.compression Frequently Asked Questions (part 2/3) (http://www.faqs.org/faqs/compression-faq/part2/). Subject [75] on this lengthy page offers helpful detail on JPEG encoding.
+    JHOVE's JPEG page (http://jhove.sourceforge.net/jpeg-hul.html).
+    The Encyclopedia of Graphic File Formats, 2nd Edition, 1996 (EGFF) has information on JPEG and JFIF. See print citation below. Online access is available at:
+        EGFF: JPEG File Interchange Format File Format Summary (http://www.fileformat.info/format/jpeg/egff.htm). From FileFormat.Info. Good technoical content. This presentation states that the work has been released under a Creative Commons Attribution license.
+        EGFF: JPEG File Interchange Format File Format Summary (http://web.archive.org/web/20071210094024/http://www.fileformat.info/format/gif/egff.htm). From FileFormat.Info, via Internet Archive's Wayback Machine. Included because FileFormat.info has not been updated recently (as of November 2012) and was not functioning for a period.
+        EGFF: JPEG File Interchange Format (http://netghost.narod.ru/gff/graphics/summary/jfif.htm). Copy made available from a site in Russia.
+    The Independent JPEG Group's reference software for JPEG has a guide, authored in the 1990s by Thomas G. Lane, entitled Using the IJG JPEG Library. This guide describes many aspects of the JPEG format and its options. The guide is distributed as part of the software library and has been made available online from several sources and in various forms:
+        Using the IJG JPEG Library -- from a Linux support site in France (http://apodeline.free.fr/DOC/libjpeg/libjpeg.html).
+        Using the IJG JPEG Library -- from the computer science department at the Friedrich-Alexander-Universität Erlangen-Nürnberg (http://www4.cs.fau.de/Services/Doc/graphics/doc/jpeg/libjpeg.html).
+        Using the IJG JPEG Library -- from Internet Archive (http://web.archive.org/web/20120701114929/http://www.jpegcameras.com/libjpeg/libjpeg.html).
+
+

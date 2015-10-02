@@ -1,0 +1,344 @@
+
+Adobe® Supplement to
+ISO 32000-1
+BaseVersion: 1.7
+ExtensionLevel: 5
+Adobe® Acrobat® SDK
+Version 9.1
+June 2009
+© 2009 Adobe Systems Incorporated. All rights reserved.
+Adobe® Acrobat® 9.1 SDK Adobe Supplement to the ISO 32000
+Edition 2.0, June 2009
+If this guide is distributed with software that includes an end user agreement, this guide, as well as the software described in it, is furnished under
+license and may be used or copied only in accordance with the terms of such license. Except as permitted by any such license, no part of this guide
+may be reproduced, stored in a retrieval system, or transmitted, in any form or by any means, electronic, mechanical, recording, or otherwise, without
+the prior written permission of Adobe Systems Incorporated. Please note that the content in this guide is protected under copyright law even if it is not
+distributed with software that includes an end-user license agreement.
+The content of this guide is furnished for informational use only, is subject to change without notice, and should not be construed as a commitment by
+Adobe Systems Incorporated. Adobe Systems Incorporated assumes no responsibility or liability for any errors or inaccuracies that may appear in the
+informational content contained in this guide.
+Please remember that existing artwork or images that you may want to include in your project may be protected under copyright law. The unauthor
+-
+ized incorporation of such material into your new work could be a violation of the rights of the copyright owner. Please be sure to obtain any permis
+-
+sion required from the copyright owner.
+Any references to company names, company logos and user names in sample material or sample forms included in this documentation and/or soft
+-
+ware are for demonstration purposes only and are not intended to refer to any actual organization or persons.
+Adobe, the Adobe logo, and Acrobat are either registered trademarks or trademarks of Adobe Systems Incorporated in the United States and/or other
+countries.
+Adobe Systems Incorporated, 345 Park Avenue, San Jose, California 95110, USA.
+Notice to U.S. Government End Users. The Software and Documentation are “Commercial Items,” as that term is defined at 48 C.F.R. §2.101, consist
+-
+ing of “Commercial Computer Software” and “Commercial Computer Software Documentation,” as such terms are used in 48 C.F.R. §12.212 or 48
+C.F.R. §227.7202, as applicable. Consistent with 48 C.F.R. §12.212 or 48 C.F.R. §§227.7202-1 through 227.7202-4, as applicable, the Commercial Com
+-
+puter Software and Commercial Computer Software Documentation are being licensed to U.S. Government end users (a) only as Commercial Items
+and (b) with only those rights as are granted to all other end users pursuant to the terms and conditions herein. Unpublished-rights reserved under the
+copyright laws of the United States. Adobe Systems Incorporated, 345 Park Avenue, San Jose, CA 95110-2704, USA. For U.S. Government End Users,
+Adobe agrees to comply with all applicable equal opportunity laws including, if appropriate, the provisions of Executive Order 11246, as amended,
+Section 402 of the Vietnam Era Veterans Readjustment Assistance Act of 1974 (38 USC 4212), and Section 503 of the Rehabilitation Act of 1973, as
+amended, and the regulations at 41 CFR Parts 60-1 through 60-60, 60-250, and 60-741. The affirmative action clause and regulations contained in the
+preceding sentence shall be incorporated by reference.
+Adobe Extensions Level 5
+3
+Contents
+1
+Preface
+............................................................................................................................................................
+4
+2
+Transitioning the PDF Specification to ISO
+.............................................................................................
+5
+3
+Extensions to ISO 32000-1
+..........................................................................................................................
+7
+3.1
+Transparency
+..........................................................................................................................................
+7
+3.2
+Portable Collections
+..............................................................................................................................
+7
+3.3
+Rich Text Strings
+....................................................................................................................................
+8
+3.4
+XFA
+..........................................................................................................................................................
+8
+Adobe Extensions Level 5
+4
+1
+Preface
+The Portable Document Format (PDF) is a file format for representing documents in a manner independent of
+the application software, hardware, and operating system used to create them and of the output device on which
+they are to be displayed or printed.
+What’s in this guide?
+This document describes Adobe’s extension and implementation notes relative to the ISO 32000-1:2008, Docu
+-
+ment management, Portable document format, PDF 1.7. The extensions are to the PDF document format. Adobe
+has submitted these extensions to ISO for inclusion into the next version of the ISO 32000 specification and they
+have all been accepted for part 2 of ISO 32000.
+Who should read this guide?
+This guide is intended for developers of applications that consume or produce PDF content.
+Related documentation
+The resources in this table can help you understand the material in this document. These documents, with the
+exception of ISO 32000, are available through the Adobe PDF Technology Center.
+For information about
+Resource
+Adobe PDF specification
+PDF Reference, sixth edition, version 1.7
+Adobe PDF specification for redaction an
+-
+notations
+PDF Redaction: Addendum to the PDF Reference,
+sixth edition, version 1.7
+Corrections to the PDF specification
+Errata for the PDF Reference, sixth edition, ver
+-
+sion 1.7
+ISO version of the PDF Reference.
+ISO 32000-1:2008
+Adobe Extensions Level 5
+5
+2
+Transitioning the PDF Specification to ISO
+Adobe has transferred responsibility for the PDF specification to the International Standards Organization
+(ISO) which has published ISO 32000, Document management, Portable document format, PDF 1.7 - otherwise
+known as ISO 32000-1:2008. Consequently, this document normatively references that document..
+Extensions to the PDF specification
+The language extensions described in this guide have been submitted to ISO as proposed changes to the PDF
+specification and the ISO 32000 committee has accept them for inclusion into part 2 of ISO 32000. The text in
+this document reflects the exact syntax and semantics of the ISO versions as implemented in Acrobat & Reader
+9.1 and later.
+In the past, Adobe identified extensions to the PDF specification with PDF version identifiers, such as PDF 1.7.
+Now that ISO has responsibility for the PDF specification, such identification is no longer within Adobe’s con
+-
+trol. As an alternative, Adobe will use the extensions mechanisms defined for ISO 32000-1 by which Adobe and
+other companies can identify extensions to the PDF specification.
+The new convention lets companies and other entities identify their own extensions relative to a base version of
+PDF. Additionally, the convention identifies extension levels relative to that base version. For normative informa
+-
+tion on the use of base versions and extension levels in a PDF document, see ISO 32000-1:2008, 7.12.
+Behavior of PDF consumers that does not support an extension
+The extension convention also relies on the behavior of PDF consuming applications when they encounter PDF
+properties they do not recognize. The Section 2.2.8 “Extensibility” in the PDF Reference, sixth edition, version
+1.7 describes this behavior as follows:
+PDF is designed to be extensible. Not only can new features be added, but applications based on
+earlier versions of PDF can behave reasonably when they encounter newer features that they do
+not understand. Appendix H describes how a PDF consumer application should behave in such
+cases.
+And Appendix H in PDF Reference, sixth edition, version 1.7 provides this additional guidance:
+Both viewer applications and PDF have been designed to enable users to view everything in the
+document that the viewer application understands and to ignore or inform the user about objects
+not understood. The decision whether to ignore or inform the user is made on a feature-by-fea
+-
+ture basis.
+Subsequent extensions to a BaseVersion
+Each subsequent company-specific extension level for a particular PDF base version is cumulative. In other
+words, PDF-processing applications that support the third extension level for a particular base level shall also
+support the first and second extension levels.
+It is Adobe’s intent to increment the base version extensions only with major releases of its PDF-processing ap
+-
+plications. This document reflects that by documenting those extensions from Acrobat 9.1.
+Adobe Extensions Level 5
+6
+Plans related to the first version of ISO 32000
+The first version of ISO 32000 conveys exactly the same requirements as the PDF Reference, sixth edition, ver
+-
+sion 1.7 but made normative through the proper usage of ISO terminology. Because of this similarity and to
+avoid unnecessary confusion, Adobe will continue using 1.7 as its base version until the second release of ISO
+32000.
+For information about changes Adobe made to PDF Reference, sixth edition, version 1.7 to become the ISO
+Draft International Standard (DIS), see ISO 32000 — Summary of Changes. This document is available through
+http://www.adobe.com/go/pdf_developer (select “PDF Specification, Sixth Edition”).
+Plans related to subsequent versions of ISO 32000
+After the second version of ISO 32000 is released, Adobe will use a new base version value that reflects the new
+Version value specified by that second version of ISO 32000. Features that are included in the second ISO ver
+-
+sion will henceforth be considered as features of the ISO version and the designation (in the PDF files) as being
+Adobe extensions will no longer be used.
+Extensions described for the 1.7 base version that are incorporated into the second version of ISO 32000 will not
+be included in future versions of this document. Extensions described in a prior release that are not incorporated
+into ISO 32000 will remain in this document with their original base version and extension level.
+The third and subsequent releases of ISO 32000 will repeat this pattern.
+Adobe Extensions Level 5
+7
+3
+Extensions to ISO 32000-1
+3.1
+Transparency
+The following material amends Section 11.3.5, “Blend Mode.”
+TABLE 136 Standard separable blend modes
+NAME
+RESULT
+ColorDodge
+Brightens the backdrop color to reflect the source
+color. Painting with black produces no changes.
+????
+(
+????
+????
+,
+????
+????
+)
+=
+?
+0,
+????
+????
+= 0
+1,
+????
+????
+=
+(
+1
+-????
+????
+)
+?
+????
+????
+/
+(
+1
+-????
+????
+)
+?
+,
+?????????????????????????
+????
+????
+
+ColorBurn
+Darkens the backdrop color to reflect the source color.
+Painting with white produces no change.
+????
+(
+????
+????
+,
+????
+????
+)
+=
+?
+1,
+????
+????
+= 1
+0,
+(
+1
+-????
+????
+)
+=????
+????
+1
+-
+?
+(
+1
+-????
+????
+)
+/
+????
+????
+?
+,
+?????????????????????????
+????
+????
+
+Note: These functions are formulated in a different way here than they are in ISO 32000-1. However, they produce the same results except in one
+special edge case. For ColorDodge, the special case is cb = 0 and cs = 1, where the result is now 0 instead of 1. For ColorBurn, the special case
+is cb = 1 and cs = 0, where the result is now 1 instead of 0. The rationale for the change is that for any given cb, the result should be a continuous
+function of cs.
+3.2
+Portable Collections
+3.2.1
+Background
+This proposal clarifies the behavior of the
+D
+entry when its value does not match any embedded file. ISO 32000-1
+currently says that if the
+D
+entry “is missing or in error”, the root document should be shown. In retrospect, the
+second half of this definition was probably a mistake: if the
+D
+entry exists but doesn’t match a file, the most likely
+explanation is that it did match a file at one time, but the file was removed. In that case it would be more desir
+-
+able to select another file in the list than to show the root document, particularly when the root document has a
+compatibility message that advises the user to upgrade to the product they are currently using.
+3.2.2
+Proposal
+In table 155 (12.3.5), the definition of the D key is amended as follows, with the new language underlined.
+Adobe Extensions Level 5
+8
+Table 155 - Entries in a Collections dictionary
+KEY
+TYPE
+VALUE
+D
+byte string
+(
+Optional
+) A string that identifies an entry in the
+EmbeddedFiles name tree, controlling the document
+that is initially presented in the user interface. If the
+D entry is missing or in error, the initial document is
+the one that contains the collection dictionary.
+If the
+D entry is a valid byte string that does not match any
+file in the EmbeddedFiles name tree, the conforming
+interactive reader shall select the first item from the
+list of files to display in its user interface; if no files ex
+-
+ist in the name tree, the conforming interactive reader
+shall display an empty preview window.
+3.3
+Rich Text Strings
+3.3.1
+Background
+ISO 32000-1 currently supports a subset of XHTML for use in “Rich Text Strings” (12.7.3.4) for both annota
+-
+tions and form fields. A common use for such a field is to incorporate links (either entered by the author or by
+a future editor), but while such links may be specified by URI, the links are not treated as active. This proposal
+enables the standard
+<a>
+elements of XHTML to enable proper linking.
+3.3.2
+Proposal
+The following material amends Section 12.7.3.4, “Rich Text Strings.”
+Table 223 - Updates to XHTML elements used in rich text string
+Element
+Description
+<a>
+An anchor, or hyperlink reference, to an arbitrary URI
+Table 224a - Attributes of the <a> element
+Element
+Description
+<href>
+An arbitrary URI to which to link.
+No syntax restrictions are placed on the value of the href attribute. A con
+-
+forming reader can choose what types of URIs to support and how to handle
+badly formed link targets or targets in unsupported syntax.
+In addition, named anchors are not supported.
+3.4
+XFA
+Adobe has update the XFA (XML Forms Architecture) technology to version 3.0 and the advancements there
+have been implemented in Acrobat and Reader 9.1, and is recommended as the new normative reference for
+XFA in PDF (ISO 32000-1:2008, 12.7.8). The documentation can be found at http://partners.adobe.com/public/
+developer/xml/index_arch.html.

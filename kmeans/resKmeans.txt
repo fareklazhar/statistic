@@ -1,0 +1,362 @@
+k=3
+
+Final SSE: 258.683571
+
+
+Class 0
+========
+TIF
+
+
+Class 1
+========
+GIF
+PNG
+MP3
+PDF
+JPG
+DOC
+HTML
+BMP
+PPT
+
+
+Class 2
+========
+MAC
+SXW
+DXF
+
+
+######################
+
+k=4
+
+Final SSE: 199.571563
+
+
+Class 0
+========
+PNG
+JPG
+DOC
+HTML
+PPT
+
+
+Class 1
+========
+GIF
+MP3
+PDF
+BMP
+
+
+Class 2
+========
+TIF
+
+
+Class 3
+========
+MAC
+SXW
+DXF
+
+########################
+
+k=5
+
+Final SSE: 175.685219
+
+
+Class 0
+========
+PNG
+JPG
+HTML
+BMP
+PPT
+DXF
+
+
+Class 1
+========
+GIF
+MP3
+PDF
+
+
+Class 2
+========
+DOC
+
+
+Class 3
+========
+TIF
+
+
+Class 4
+========
+MAC
+SXW
+
+#######################
+
+k=6
+
+Final SSE: 142.452232
+
+
+Class 0
+========
+MAC
+SXW
+DXF
+
+
+Class 1
+========
+TIF
+
+
+Class 2
+========
+GIF
+PDF
+
+
+Class 3
+========
+BMP
+
+
+Class 4
+========
+PNG
+JPG
+DOC
+HTML
+PPT
+
+
+Class 5
+========
+MP3
+
+######################
+
+k=7
+
+Final SSE: 119.414481
+
+
+Class 0
+========
+PNG
+
+
+Class 1
+========
+TIF
+
+
+Class 2
+========
+PDF
+
+
+Class 3
+========
+GIF
+MP3
+
+
+Class 4
+========
+JPG
+DOC
+HTML
+BMP
+PPT
+
+
+Class 5
+========
+SXW
+DXF
+
+
+Class 6
+========
+MAC
+
+###################
+
+k=8
+
+Final SSE: 98.012910
+
+
+Class 0
+========
+GIF
+MP3
+
+
+Class 1
+========
+MAC
+
+
+Class 2
+========
+PDF
+JPG
+DOC
+HTML
+
+
+Class 3
+========
+BMP
+PPT
+
+
+Class 4
+========
+PNG
+
+
+Class 5
+========
+TIF
+
+
+Class 6
+========
+DXF
+
+
+Class 7
+========
+SXW
+
+
+###############
+
+k=9
+
+Final SSE: 64.936302
+
+
+Class 0
+========
+SXW
+
+
+Class 1
+========
+PDF
+
+
+Class 2
+========
+JPG
+DOC
+HTML
+PPT
+
+
+Class 3
+========
+MAC
+
+
+Class 4
+========
+TIF
+
+
+Class 5
+========
+PNG
+
+
+Class 6
+========
+GIF
+MP3
+
+
+Class 7
+========
+BMP
+
+
+Class 8
+========
+DXF
+
+###################
+
+k=10
+
+Final SSE: 36.698343
+
+
+Class 0
+========
+MP3
+
+
+Class 1
+========
+GIF
+
+
+Class 2
+========
+DOC
+
+
+Class 3
+========
+MAC
+SXW
+
+
+Class 4
+========
+TIF
+
+
+Class 5
+========
+BMP
+
+
+Class 6
+========
+PDF
+
+
+Class 7
+========
+PPT
+
+
+Class 8
+========
+DXF
+
+
+Class 9
+========
+PNG
+JPG
+HTML
+
+##################
+

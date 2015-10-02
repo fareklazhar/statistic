@@ -1,0 +1,222 @@
+Microsoft PowerPoint
+From Wikipedia, the free encyclopedia
+"Power point" redirects here. For other uses, see Power point (disambiguation).
+	This article's lead section may not adequately summarize key points of its contents. Please consider expanding the lead to provide an accessible overview of all important aspects of the article. (December 2013)
+Microsoft PowerPoint Microsoft PowerPoint 2013 logo.svg
+Microsoft PowerPoint 2013 Default Screen.png
+Developer(s) 	Microsoft
+Stable release 	2013 (15.0.4420.1017) / October 2, 2012; 2 years ago
+Written in 	C++[1]
+Operating system 	Microsoft Windows
+Type 	Presentation program
+License 	Trialware
+Website 	office.microsoft.com/powerpoint
+Microsoft PowerPoint for Mac Microsoft Powerpoint 2011 Icon.png
+Microsoft PowerPoint for Mac 2011.png
+Microsoft PowerPoint for Mac 2011 running on Mac OS X Snow Leopard
+Developer(s) 	Microsoft
+Stable release 	2011 (14.1.2.110505 SP1) / June 14, 2011; 3 years ago
+Operating system 	Mac OS X
+Type 	Presentation program
+License 	Proprietary commercial software
+Website 	www.microsoft.com/mac/powerpoint
+
+Microsoft PowerPoint is a slide show presentation program developed by Microsoft. It was officially launched on May 22, 1990, as a part of the Microsoft Office suite.
+
+Contents
+
+    1 History
+    2 Operation
+    3 Cultural impact
+        3.1 Military excess
+        3.2 Artistic medium
+    4 PowerPoint Viewer
+    5 Versions
+        5.1 Microsoft PowerPoint 2011
+    6 File formats
+    7 Password protection
+    8 See also
+    9 References
+    10 Further reading
+    11 External links
+
+History
+
+Originally designed for the Macintosh computer, the initial release was called "Presenter", developed by Dennis Austin and Thomas Rudkin[2] of Forethought, Inc.[3] In 1987, it was renamed to "PowerPoint" due to problems with trademarks, the idea for the name coming from Robert Gaskins.[4] In August of the same year, Forethought was bought by Microsoft for $14 million USD ($29.1 million in present-day terms[5]), and became Microsoft's Graphics Business Unit, which continued to develop the software further. PowerPoint was officially launched on May 22, 1990, the same day that Microsoft released Windows 3.0.
+
+PowerPoint introduced many new changes with the release of PowerPoint 97. Prior to PowerPoint 97, presentations were linear, always proceeding from one slide to the next. PowerPoint 97 incorporated the Visual Basic for Applications (VBA) language, underlying all macro generation in Office 97, which allowed users to invoke pre-defined transitions and effects in a non-linear movie-like style without having to learn programming.
+
+PowerPoint 2000 (and the rest of the Office 2000 suite) introduced a clipboard that could hold multiple objects at once. Another change was that the Office Assistant was changed to be less intrusive.[6]
+
+PowerPoint 2002 massively overhauled the animation engine, allowing users to create more advanced and custom animations.[7]
+
+As of 2012, various versions of PowerPoint claim ~95% of the presentation software market share, with installations on at least 1 billion computers. Among presenters world-wide, this program is used at an estimated frequency of 350 times per second.[8]
+Operation
+
+PowerPoint presentations consist of a number of individual pages or "slides". The "slide" analogy is a reference to the slide projector. A better analogy would be the "foils" (or transparencies/plastic sheets) that are shown with an overhead projector, although they are in decline now. Slides may contain text, graphics, sound, movies, and other objects, which may be arranged freely. The presentation can be printed, displayed live on a computer, or navigated through at the command of the presenter. For larger audiences the computer display is often projected using a video projector. Slides can also form the basis of webcasts.
+
+PowerPoint provides three types of movements:
+
+    Entrance, emphasis, and exit of elements on a slide itself are controlled by what PowerPoint calls Custom Animations.
+    Transitions, on the other hand, are movements between slides. These can be animated in a variety of ways.
+    Custom animation can be used to create small story boards by animating pictures to enter, exit or move.
+
+PowerPoint provides numerous features that offer flexibility and the ability to create a professional presentation. One of the features provides the ability to create a presentation that includes music which plays throughout the entire presentation or sound effects for particular slides. In addition to the ability to add sound files, the presentation can be designed to run, like a movie, on its own. PowerPoint allows the user to record the slide show with narration and a laser pointer. The user may customize slide shows to show the slides in a different order than originally designed and to have slides appear multiple times. Microsoft also offers the ability to broadcast the presentation to specific users via a link and Windows Live.
+Cultural impact
+A PowerPoint presentation in progress.
+
+Supporters say that[9][10][11] the ease of use of presentation software can save a lot of time for people who otherwise would have used other types of visual aid—hand-drawn or mechanically typeset slides, blackboards or whiteboards, or overhead projections. Ease of use also encourages those who otherwise would not have used visual aids, or would not have given a presentation at all, to make presentations. As PowerPoint's style, animation, and multimedia abilities have become more sophisticated, and as the application has generally made it easier to produce presentations (even to the point of having an "AutoContent Wizard" that was discontinued in PowerPoint 2007, suggesting a structure for a presentation), the difference in needs and desires of presenters and audiences has become more noticeable.[12] Experienced PowerPoint designers point out that the "AutoContent Wizard" caused a glitch which contributed greatly to on-screen freezing of slides. Many designers opt to use the "blank slide layout" in lieu of the other layout choices for this reason. Nevertheless, in normal business use, most presentations created using PowerPoint are based on its default layout and font choices.[13]
+
+The benefit of PowerPoint is continually debated, though most people believe that the benefit may be to present structural presentations to business workers, such as Raytheon Elcan does.[14] Its use in classroom lectures has influenced investigations of PowerPoint's effects on student performance in comparison to lectures based on overhead projectors, traditional lectures, and online lectures. There are no compelling results to prove or disprove that PowerPoint is more effective for learner retention than traditional presentation methods.[15]
+Military excess
+
+A "PowerPoint Ranger" is a military member who relies heavily on presentation software to the point of excess. Some junior officers spend the majority of their time preparing PowerPoint slides.[16] Because of its usefulness for presenting mission briefings, it has become part of the culture of the military,[17][18] but is regarded as a poor decision-making tool.[19] As a result some generals, such as Brigadier-General Herbert McMaster, have banned the use of PowerPoint in their operations.[16] In September 2010, Colonel Lawrence Sellin was fired from his post at the ISAF for publishing a piece critical of the over-dependence of military staffs on the presentation method and bloated bureaucracy.[20]
+Artistic medium
+
+Musician David Byrne has been using PowerPoint as a medium for art for years, producing a book and DVD and showing at galleries his PowerPoint based artwork.[21] The expressions "PowerPoint Art" or "pptArt" are used to define a contemporary Italian artistic movement which believes that the corporate world can be a unique and exceptional source of inspiration for the artist.
+PowerPoint Viewer
+
+Microsoft Office PowerPoint Viewer is a program used to run presentations on computers that do not have PowerPoint installed. Office PowerPoint Viewer is added by default to the same disk or network location that contains one or more presentations packaged by using the Package for CD feature.
+
+PowerPoint Viewer is installed by default with a Microsoft Office 2003 installation for use with the Package for CD feature. The PowerPoint Viewer file is also available for download from the Microsoft Office Online Web site.[22]
+
+Presentations password-protected for opening or modifying can be opened by PowerPoint Viewer. The Package for CD feature allows packaging any password-protected file or setting a new password for all packaged presentations. PowerPoint Viewer prompts for a password if the file is open password-protected.
+
+PowerPoint Viewer supports opening presentations created using PowerPoint 97 and later. In addition, it supports all file content except OLE objects and scripting. PowerPoint Viewer is currently only available for computers running on Microsoft Windows.
+Versions
+Microsoft PowerPoint 2010 running on Windows 7
+
+Versions for Microsoft Windows include:
+
+    1990 PowerPoint 2.0 for Windows 3.0
+    1992 PowerPoint 3.0 for Windows 3.1
+    1993 PowerPoint 4.0 (Office 4.x)
+    1995 PowerPoint for Windows 95 (version 7.0; Office 95)
+    1997 PowerPoint 97 (version 8.0; Office 97)
+    1999 PowerPoint 2000 (version 9.0; Office 2000)
+    2001 PowerPoint 2002 (version 10; Office XP)
+    2003 Office PowerPoint 2003 (version 11; Office 2003)
+    2007 Office PowerPoint 2007 (version 12; Office 2007)
+    2010 PowerPoint 2010 (version 14; Office 2010)
+    2013 PowerPoint 2013 (version 15; Office 2013)
+
+    Note: There is no PowerPoint version 5.0 or 6.0, because the Windows 95 version was launched with Word 7.0. All Office 95 products have OLE 2 capacity—moving data automatically from various programs—and PowerPoint 7.0 shows that it was contemporary with Word 7.0.
+    Note 2: Version number 13 was skipped due to superstition.
+
+Icon for PowerPoint for Mac 2008
+
+Versions for the Mac OS include:
+
+    1987 PowerPoint 1.0 for Mac OS classic
+    1988 PowerPoint 2.0 for Mac OS classic
+    1992 PowerPoint 3.0 for Mac OS classic
+    1994 PowerPoint 4.0 for Mac OS classic
+    1998 PowerPoint 98 (8.0) for Mac OS classic (Office 1998 for Mac)
+    2000 PowerPoint 2001 (9.0) for Mac OS classic (Office 2001 for Mac)
+    2002 PowerPoint v. X (10.0) for Mac OS X (Office:Mac v. X)
+    2004 PowerPoint 2004 (11.0) for Mac OS X Office:Mac 2004
+    2008 PowerPoint 2008 (12.0) for Mac OS X Microsoft Office 2008 for Mac
+    2010 PowerPoint 2011 (14.0) for Mac OS X Microsoft Office 2011 for Mac
+
+Note: There is no PowerPoint 5.0, 6.0 or 7.0 for Mac. There is no version 5.0 or 6.0 because the Windows 95 version was launched with Word 7. All of the Office 95 products have OLE 2 capacity—moving data automatically from various programs—and PowerPoint 7 shows that it was contemporary with Word 7. There was no version 7.0 made for Mac to coincide with either version 7.0 for Windows or PowerPoint 97.[23][24]
+Microsoft PowerPoint 2011
+
+In PowerPoint 2011, several key features have been added. Screen Capturing allows for taking a screenshot and adding it into the document. It is now possible to remove image backgrounds, and there are additional special effects that can be used with pictures, such as 'Pencil effects'. Additional transitions are also available. However, the ability to apply certain text effects directly onto existing text, as seen in Microsoft Word is not available; a separate WordArt text box is still required.
+File formats
+
+PowerPoint Presentation Filename extension 	.ppt, .pptx, .pps, or .ppsx
+Internet media type 	application/vnd.ms-powerpoint
+Developed by 	Microsoft
+Type of format 	Presentation
+
+The binary format specification has been available from Microsoft on request, but since February 2008 the .ppt format specification can be freely downloaded.[25]
+
+In Microsoft Office 2007 the binary file formats were replaced as the default format by the new XML based Office Open XML formats, which are published as an open standard.[citation needed] Nevertheless, they are not complete as there are binary blobs inside of the XML files, and several pieces of behaviour are not specified but refer to the observed behaviour of specific versions of Microsoft product.[citation needed]
+Password protection
+Main article: Microsoft Office password protection
+
+The Microsoft Office password protection is a security feature to protect Microsoft Office documents with a user provided password.
+See also
+
+    Keynote (presentation software), the iWork presentation software used for Macintosh
+    LibreOffice Impress
+    OpenOffice Impress
+    PowerPoint animation
+    Powerpoint-Karaoke
+    Prezi
+
+References
+
+Lextrait, Vincent (January 2010). "The Programming Languages Beacon, v10.0". Retrieved 5 January 2010.
+Austin, Dennis. "Beginning of PowerPoint: A Personal Technical Story". Retrieved 23 August 2014.
+Gaskins, Robert (14 August 1984). "Sample Product Proposal: presentation graphics for overhead projection". Retrieved 19 August 2009.
+Atkinson, Max (19 August 2009). "The problem with PowerPoint". BBC News.
+Consumer Price Index (estimate) 1800–2014. Federal Reserve Bank of Minneapolis. Retrieved February 27, 2014.
+Swartz, Luke (12 June 2003). "Why People Hate the Paperclip".
+"Timeline – The animation engine in PowerPoint".
+Parks, Bob (2012-08-30), "Death to PowerPoint!", Bloomberg Businessweek, businessweek.com, retrieved 6 September 2012
+"PowerPoint Presentations: The Good, The Bad and The Ugly". Shkaminski.
+Allan, Jones (18 August 2003). "The use and abuse of PowerPoint in Teaching and Learning in the Life Sciences: A Personal Overview". Bioscience Education. Retrieved 10 February 2009.
+"The Use of PowerPoint in Teaching Comparative Politics". Technology Source.
+"A quick introduction to great PowerPoint design". Pptpop. April 2014.
+Themann, Tim. "Visual Logorrhea – On the Prevalence of Slideuments". Retrieved 23 August 2014.
+Tufte, Edward (September 2003). "PowerPoint Is Evil – Power Corrupts. PowerPoint Corrupts Absolutely.". Wired (11.09). Condé Nast Digital. Retrieved April 15, 2014.
+Savoy, April (30 January 2009). "Information retention from PowerPoint; and traditional lectures". Computers & Education. Retrieved 5 March 2009.
+Evans, MIchael (April 28, 2010), Afghanistan: the battle for hearts and bullet points, The Times
+Bumiller, Elisabeth (April 26, 2010). "We Have Met the Enemy and He Is PowerPoint". The New York Times. Retrieved 27 April 2010.
+Starbuck (July 2009). "The TX Hammes PowerPoint Challenge (Essay Contest)". Small Wars Journal. Retrieved 27 April 2010.
+Hammes, T.X. (July 2009). "Essay: Dumb-dumb bullets". Armed Forces Journal. Retrieved 27 April 2010.
+Sellin, Lawrence (September 5, 2010). "The PowerPoint rant that got a colonel fired". United Press International. Army Times. Retrieved 8 September 2010.
+http://www.davidbyrne.com/art/eeei/index.php
+"PowerPoint Viewer". Download Center. Microsoft. 25 November 2011. Retrieved 6 July 2014.
+"PowerPoint Tips". Bit Better.
+"Do More on Your Mac". Microsoft.
+
+    "Microsoft Office Powerpoint 97 - 2007 Binary File Format Specification (*.ppt)". Microsoft Corporation. 2007.
+
+Further reading
+
+    Lowenthal, P. R. (2009). Improving the Design of PowerPoint Presentations . In P. R. Lowenthal, D. Thomas, A. Thai, & B. Yuhnke, B. (Eds.), The CU Online handbook. Teach differently: Create and collaborate (pp. 61–66). Raleigh, NC: Lulu Enterprises.
+    Kalyuga, Slava; Chandler, Paul; Sweller, John (2004). "When Redundant On-Screen Text in Multimedia Technical Instruction Can Interfere With Learning". Human Factors: The Journal of the Human Factors and Ergonomics Society 46 (3): 567–581. doi:10.1518/hfes.46.3.567.50405. PMID 15573552. Retrieved 11 February 2015., also at [1] (Feb 2015).
+    Pptpop (2014).3 Secret Rules to Killer PowerPoint Presentations
+
+External links
+	Wikibooks has a book on the topic of: Microsoft Office/Creating and Editing a Presentation
+
+Microsoft
+
+    Official website
+    PowerPoint team blog at MSDN Blogs
+    Office 2010 product guide
+    PowerPoint Viewer
+    Microsoft Mouse Mischief—a PowerPoint add-in
+
+Third-party
+
+    Microsoft PowerPoint at DMOZ
+    Robert Gaskins's website, one of the PowerPoint developers
+    PPT Search Engine
+
+[show]
+
+    v
+    t
+    e
+
+Presentation software
+[show]
+
+    v
+    t
+    e
+
+Microsoft Office
+Categories:
+
+    1987 software
+    Mac OS software
+    Microsoft Office
+    Presentation software for Windows
+    Presentation software for OS X
+    Presentation software
+    Technical communication tools

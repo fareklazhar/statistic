@@ -1,0 +1,362 @@
+Doc (computing)
+From Wikipedia, the free encyclopedia
+Ambox current red.svg
+	This article is outdated. Please update this article to reflect recent events or newly available information. (October 2009)
+Word Document MS word DOC icon.svg
+Filename extension 	.doc
+Internet media type 	application/msword[1]
+Uniform Type Identifier (UTI) 	com.microsoft.word.doc[2][3]
+Developed by 	Microsoft
+Latest release 	
+3.3
+(18 November 2012; 2 years ago[4])
+Type of format 	document file format
+Container for 	Text, Image,Table
+Extended to 	Microsoft Office XML formats, Office Open XML
+Open format? 	No
+
+In computing, DOC or doc (an abbreviation of 'document') is a filename extension for word processing documents, most commonly in the proprietary Microsoft Word Binary File Format.[4] Historically, the extension was used for documentation in plain text, particularly of programs or computer hardware on a wide range of operating systems. During the 1980s, WordPerfect used DOC as the extension of their proprietary format. Later, in the 1990s, Microsoft chose to use the DOC extension for their proprietary Microsoft Word format. The original uses for the extension have largely disappeared from the PC world.
+
+Contents
+
+    1 Microsoft Word Binary File Format
+        1.1 Application support
+        1.2 Specification
+    2 Other file formats
+    3 See also
+    4 References
+    5 External links
+
+Microsoft Word Binary File Format
+
+Binary DOC files often contain more text formatting information (as well as scripts and undo information) than some other document file formats like Rich Text Format and HyperText Markup Language, but are usually less widely compatible.
+
+The DOC files created with Microsoft Word versions differ. Microsoft Word versions up to Word 97 used a different format from Microsoft Word 97 - 2003.
+
+In Microsoft Word 2007 and later, the binary file format was replaced as the default format by the Office Open XML format, though Microsoft Word can still produce DOC files.
+Application support
+See also: Comparison of word processors
+
+The DOC format is native to Microsoft Word. Other word processors, such as OpenOffice.org Writer, IBM Lotus Symphony, Apple Pages and AbiWord, can also create and read DOC files, although with some limitations. Command line programs for Unix-like operating systems that can convert files from the DOC format to plain text or other standard formats include the wv library, which itself is used directly by AbiWord.
+Specification
+
+Because the DOC file format was a closed specification for many years, inconsistent handling of the format persists and may cause some loss of formatting information when handling the same file with multiple word processing programs. Some specifications for Microsoft Office 97 binary file formats were published in 1997 under a restrictive license, but these specifications were removed from online download in 1999.[5][6][7][8] Specifications of later versions of Microsoft Office binary file formats were not publicly available. The DOC format specification was available from Microsoft on request[9] since 2006[10] under restrictive RAND-Z terms until February 2008. Sun Microsystems and OpenOffice.org reverse engineered the file format.[11] On February 15, 2008, Microsoft released a .DOC format specification[4][12][13] under the Microsoft Open Specification Promise.[14][15] However, this specification does not describe all of the features used by DOC format and reverse engineered work remains necessary.[16] Since 2008 the specification was changed several times, the last change was made in November 2013.
+Other file formats
+
+Some historical documentations may use the DOC filename extension for plain-text file format. The DOC filename extension was also used in historical versions of WordPerfect for its proprietary format.
+
+Some software applications use the name "DOC" in combination with other words (such as the name of software manufacturer) for different file formats. As an example, on the Palm OS, DOC is shorthand for PalmDoc, a completely unrelated format (commonly using PDB filename extension) used to encode text files such as ebooks.
+See also
+
+    De facto standard
+    Dominant design
+
+References
+
+"Registion of a new MIME Content-Type/Subtype - application/msword". IANA. 1993-07-22. Retrieved 2012-06-20.
+Uniform Type Identifiers Reference, Apple, retrieved 2012-06-20
+"System-Declared Uniform Type Identifiers (Mac OS X v10.4)". Apple Developer Connection. Apple Inc. 2008-04-08.
+MS-DOC: Word (.doc) Binary File Format, 2012-04-11, retrieved 2012-06-18
+"Comparing ODF and OOXML" (pdf). 2006. Retrieved 2011-05-23.
+Beware of Geeks Bearing Gifts, 2006, retrieved 2011-05-23
+"A Word 8 converter for Unix". Retrieved 2011-05-23.
+"Microsoft Word 97 Binary File Format". Retrieved 2011-05-23.
+"Royalty-free specifications for Microsoft Office binary file formats". Retrieved 2011-05-23.
+"Mapping documents in the binary format (.doc; .xls; .ppt) to the Open XML format". 2008-01-16. Retrieved 2011-05-23.
+"Microsoft Compound Document Format". OpenOffice.org. 2007-08-07.
+Microsoft Office Binary (doc, xls, ppt) File Formats, 2008-02-15, archived from the original on 2008-02-18
+"Microsoft Office Word 97 - 2007 Binary File Format Specification (*.doc)". Microsoft Corporation. 2008.
+"Microsoft Open Specification Promise". Microsoft Corporation. March 23, 2009.
+"How to extract information from Office files by using Office file formats and schemas". Retrieved 2011-05-23.
+
+    Joel Spolsky. "Why are the Microsoft Office file formats so complicated? (And some workarounds)". Archived from the original on 2013-10-14. Retrieved 2011-05-23.
+
+External links
+
+    DOC, XLS, and PPT specifications
+    How to obtain the latest Microsoft Word Viewer
+    Microsoft Compound Document Format - OpenOffice.org
+
+[hide]
+
+    v
+    t
+    e
+
+Multi-purpose office document file formats
+Editable document formats 	
+
+    Compound Document Format
+    Microsoft Office XML formats
+    Office Open XML
+    Open Document Architecture
+    OpenDoc
+    OpenDocument
+    OpenOffice.org XML
+    Revisable-Form Text
+    Rich Text Format
+    Uniform Office Format
+    Word Document
+
+Fixed document formats 	
+
+    DjVu
+    Envoy
+    Open XML Paper Specification
+    Portable Document Format
+
+Related topics 	
+
+    Character encoding
+        ASCII
+        Unicode
+    TeX
+
+Categories:
+
+    Computer file formats
+    Microsoft Office
+
+
+
+
+
+Office Open XML
+
+Office Open XML
+Dateiendung: 	.docx, .xlsx, .pptx
+MIME-Type: 	application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.openxmlformats-officedocument.presentationml.presentation[1]
+Entwickelt von: 	Microsoft,
+Ecma International[2]
+Art: 	Office-Anwendungen
+Erweitert von: 	ZIP, XML, DOC, XLS, PPT
+Standard(s): 	ECMA-376,
+
+ISO/IEC 29500-1:2008, ISO/IEC 29500-2:2008, ISO/IEC 29500-3:2008, ISO/IEC 29500-4:2008
+Website: 	Das Microsoft-Office-Open-XML-Format
+
+Office Open XML (ECMA-376 Office Open XML File Formats bzw. ISO/IEC 29500 Information technology – Office Open XML formats) ist ein von Microsoft entwickelter offener Standard für XML-basierte Dateiformate zur Speicherung von Bürodokumenten, der den Daten- und Dateienaustausch zwischen verschiedenen Büroanwendungspaketen ermöglichen soll.[3][4]
+
+Die Formatspezifikation wurde Ecma International von Microsoft zur Standardisierung vorgelegt. Diese erfolgte am 7. Dezember 2006 als Ecma-Standard ECMA-376.
+
+Die Erstveröffentlichung als Norm ISO/IEC 29500 erfolgte am 19. November 2008.[5] Zuvor wurde bereits der Standard für Bürodokumente OpenDocument festgelegt. OOXML dient im Gegensatz zu OpenDocument dazu, die Arbeitsweisen von Microsoft Office abzubilden.
+
+Inhaltsverzeichnis
+
+    1 Vorgeschichte
+    2 Normung
+    3 Lizenzierung
+    4 Aufbau
+        4.1 Office MathML (OMML)
+        4.2 Dokumenteneigenschaften
+    5 Praktische Umsetzung
+    6 Kritik
+    7 Weblinks
+    8 Einzelnachweise
+
+Vorgeschichte
+
+Durch die große Verbreitung von Microsoft Office haben sich die dazugehörigen Dateiformate von Microsoft Word, Microsoft Excel, Microsoft Powerpoint usw. als ein De-facto-Standard für den Dokumentenaustausch etabliert.
+
+Der Aufbau dieser Office-Formate war nicht offen dokumentiert, sondern musste bei Microsoft lizenziert werden. Da die Kosten und vor allem die Lizenzbedingungen nicht für alle Anbieter akzeptabel sind, waren manche Konkurrenten (speziell Open-Source-Projekte) gezwungen, den Aufbau der Dateiformate durch Reverse Engineering herauszufinden. Aufgrund der dem Reverse Engineering anhaftenden Probleme und des Umstandes, dass die Dateiformate eng mit der inneren Arbeitsweise der Microsoft-Office-Anwendungen verknüpft sind, kann es zu fehlerhafter Erzeugung und Darstellung der Dateiinhalte durch Konkurrenzanwendungen kommen. Mittlerweile hat Microsoft die Spezifikation der Formate veröffentlicht.[6]
+
+Um das automatisierte Erstellen und Verarbeiten von Microsoft-Office-Tabellenkalkulationsdokumenten zu vereinfachen, wurde mit Microsoft Excel 2002 ein XML-basiertes Dateiformat eingeführt[7] (XML Spreadsheet[8]), das allerdings nur einen Teil der Excel-Funktionalität abspeichern kann.
+
+Mit Microsoft Office 2003 wurde die XML-Unterstützung ausgeweitet, und es wurden neue XML-basierte Dateiformate eingeführt, vor allem in Microsoft Word.[9]
+
+Für Microsoft Office 2007 wurden die XML-basierten Dateiformate überarbeitet und zum neuen Standarddateiformat bestimmt. Dieses Dateiformat bildet die Basis von Office Open XML.
+
+Das ebenfalls auf XML basierende und bereits 2006 genormte ISO/IEC 26300 (OpenDocument 1.0 bzw. abgekürzt ODF) wird von Microsoft abgelehnt, da es unter anderem zu sehr auf dem Dateiformat – und damit der Arbeitsweise und dem Funktionsumfang – von OpenOffice.org basiere und nicht geeignet sei, alle bereits existierenden Microsoft-Office-Dokumente abzubilden.[10]
+
+Verfechter von ODF halten dem jedoch entgegen, dass ODF durch proprietäre inkompatible Erweiterungen alle Eigenschaften von Microsoft-Office-Dokumenten abbilden könne.[11]
+Normung
+
+Seit einiger Zeit wird – vor allem von Regierungen (beispielsweise des US-Bundesstaates Massachusetts) oder der EU – gefordert, dass zukünftig nur noch offen dokumentierte, herstellerunabhängige, standardisierte Dateiformate benutzt werden sollen, um Lock-in-Effekte zu vermeiden und um die Interoperabilität und den langfristigen Zugriff auf Dateiinhalte sicherzustellen. Aufgrund dieser Forderungen hat Microsoft das Microsoft-Office-2007-Dateiformat der Ecma International zur Normung vorgelegt. Die Normung erfolgt dort im Rahmen des technischen Komitees 45 (TC45).
+
+Am Normungsprozess sind Apple, Barclays Capital, BP, die British Library, Essilor, Intel, die The United States Library of Congress, Microsoft, NextPage, Novell, Statoil ASA und Toshiba beteiligt.[12]
+
+Office Open XML wurde am 7. Dezember 2006 von der Ecma-International-Hauptversammlung als Ecma-Standard 376 genehmigt.[13]
+
+Im Dezember 2006 wurde Office Open XML bei der ISO als ISO/IEC CD 29500 zur Normung im Schnellverfahren (JTC 1 Fast Track Process[14]) eingereicht. In einer Abstimmung im September 2007 konnte es nicht die nötige Zustimmung erreichen, um als ISO-Norm akzeptiert zu werden.[15]
+
+Nach einer im Februar 2008 anberaumten Sitzung - bei der den zahlreichen Kommentaren begegnet wurde, die bei der Stimmabgabe im September 2007 eingereicht worden sind - bestand für die stimmberechtigten ISO-Mitglieder bis Ende März 2008 die Möglichkeit, ihre ursprünglich abgegebene Stimme zu ändern. Im Zuge der nationalen Abstimmungen wurde immer wieder über Unregelmäßigkeiten berichtet.[16] Der FFII warf Microsoft so vor, die Normungsgremien diverser Länder mit Strohmännern aufzufüllen.[17] In Norwegen soll das nationale Normungsgremium eine eindeutige Ablehnung von 21 Nein- und 2 Ja-Stimmen durch seine Mitglieder ignoriert haben.[18]
+
+In einem offenen Brief haben ISO/IEC-SC-34-Mitglieder während des Normungsverfahrens die gegen sie erhobenen persönlichen Attacken missbilligt.[19]
+
+Wie die ISO am 2. April 2008 bekanntgab, hat der Normentwurf die notwendige Stimmenmehrheit erhalten und wurde zunächst als ISO-Normentwurf ISO/IEC DIS 29500 akzeptiert. Die nationalen Normungsorganisationen von Südafrika (SABS), Brasilien (ABNT), Indien und Venezuela haben jedoch innerhalb der vorgesehenen Frist Einsprüche gegen die Veröffentlichung von ISO/IEC 29500 als Norm erhoben. Eine Entscheidung der zuständigen Gremien über die Einsprüche wurde für Ende Juni 2008 angekündigt; bis dahin wurde die Normung bzw. Veröffentlichung suspendiert.[20] Am 15. August 2008 gab die ISO bekannt, dass die Einsprüche der nationalen Normungsorganisationen zurückgewiesen wurden und die Norm nun zur Veröffentlichung freigegeben ist.[21] Eine vollständige Implementierung der Norm existiert bisher noch nicht, auch Microsoft Office 2007 erfüllt nicht alle Anforderungen.[22] Die Veröffentlichung als Norm ISO/IEC 29500 erfolgte am 19. November 2008 in vier Teilen:[23] Mittlerweile gibt es eine Neuausgabe mit Veröffentlichung im September 2012.[24]
+
+    ISO/IEC 29500-1 – Office Open XML File Formats – Part 1: Fundamentals and Markup Language Reference
+    ISO/IEC 29500-2 – Office Open XML File Formats – Part 2: Open Packaging Conventions
+    ISO/IEC 29500-3 – Office Open XML File Formats – Part 3: Markup Compatibility and Extensibility
+    ISO/IEC 29500-4 – Office Open XML File Formats – Part 4: Transitional Migration Features
+
+Die vier Dokumente können als öffentlich verfügbare Normen kostenlos bei ISO heruntergeladen werden.[25]
+Lizenzierung
+
+Wie alle Ecma-International-Standards ist auch Office Open XML frei verfügbar und kopierbar.[26]
+
+In einem covenant not to sue hat Microsoft erklärt, dass es unwiderruflich auf eine Durchsetzung aller für eine konforme Umsetzung der Office-2003-XML-Reference-Schemas-Spezifikation notwendigen Patente gegenüber Programmteilen, die diese Spezifikation implementieren, verzichtet.[27] Die Rechtsanwaltskanzlei Baker & McKenzie hat im Auftrag von Microsoft unter anderem den Inhalt und die Gültigkeit dieses covenants überprüft und in einer Studie[28] festgestellt, dass keine Lizenz benötigt wird, um Office Open XML einsetzen zu können.[29]
+
+Zudem hat Microsoft die Office-2003-XML-Reference-Schemas- und die Office-Open-XML-1.0–ECMA-376-Spezifikation in die Microsoft Open Specification Promise (OSP) aufgenommen. In der OSP verspricht Microsoft, auf die Durchsetzung von Patenten gegenüber Programmteilen, die die angeführten Spezifikationen implementieren, zu verzichten. Die OSP bezieht sich allerdings nur auf von Microsoft explizit angeführten Versionen der jeweiligen Spezifikationen.[30] Außerdem gilt das nicht für eventuelle Patentansprüche Dritter.
+
+Laut Software Freedom Law Center würde sich das Versprechen jedoch auf neue Versionen nur ausdehnen, wenn sich Microsoft an Standardisierungs-Aktivitäten beteiligt. Durch ein Beenden der Standardisierungs-Aktivitäten seitens Microsoft wäre das Versprechen also hinfällig. [31]
+Aufbau
+
+Office Open XML besteht aus einer Spezifikation für ein Containerformat, den Open Packaging Conventions, und einer Reihe von XML-basierten Auszeichnungssprachen für die einzelnen Komponenten eines Büroanwendungspaketes. Office-Open-XML-Dokumente werden in Packages gespeichert, die den Open Packaging Conventions entsprechen. Ein Package ist eine ZIP-Datei, die alle Bestandteile (Parts und Items) eines Dokuments enthält.
+
+Parts sind die einzelnen Bestandteile (Bausteine) des Inhalts des Dokuments (Text, Grafiken, Bilder etc.), während Items beschreibende Metadaten sind, die festlegen, wie die einzelnen Bestandteile des Dokuments zusammengestellt und dargestellt werden sollen. Items können in Relationship items und Content-Type items unterteilt werden. Relationship items beschreiben, wie die einzelnen Parts zusammenhängen, d. h., wie die einzelnen Bestandteile des Dokuments zusammengefügt werden müssen, während Content-Type items den Content-Type der einzelnen Bestandteile festlegen, d. h., wie die einzelnen Bestandteile dargestellt werden müssen. Jedes Office-Open-XML-Dokument besteht aus einem main part (Hauptbestandteil) und eventuell aus weiteren Bestandteilen, die vom main part über ein relationship item referenziert werden. Der Aufbau, Name und Pfad (innerhalb der ZIP-Datei) des main parts hängt vom Typ des Office-Open-XML-Dokuments (Textverarbeitungsdokument, Tabellenkalkulationsdokument etc.) ab.
+
+Die Auszeichnungssprachen sind
+
+    WordprocessingML für Textverarbeitungsdokumente
+    SpreadsheetML für Tabellenkalkulationsdokumente
+    PresentationML für Präsentationsdokumente
+    DrawingML für Zeichnungsdokumente
+    VML für Zeichnungsobjekte innerhalb anderer Dokumente
+
+und eine Reihe von Hilfsauszeichnungssprachen für Custom XML Data Properties (zum Speichern von beliebigen XML in einem Package), Dateieigenschaften, mathematische Formeln und bibliographischen Hinweisen.
+
+Ein minimales Office-Open-XML-Textverarbeitungsdokument enthält im Wurzelverzeichnis der ZIP-Datei eine XML-Datei namens /[Content_Types].xml sowie drei Verzeichnisse /_rels, /docProps und ein Verzeichnis mit den eigentlichen Dokumentdaten.
+Inhalt eines minimalen Office-Open-XML-Textverarbeitungsdokuments
+
+[Content_Types].xml-Datei
+    Diese Datei enthält eine Beschreibung des Inhaltes der ZIP-Datei
+_rels-Verzeichnis
+    In den _rels-Verzeichnissen werden die Abhängigkeiten zwischen den einzelnen Parts gespeichert und zwar je Part in einer eigenen Datei mit der Erweiterung .rels. In einem Textverarbeitungsdokument mit Text und Bildern ist der Text zum Beispiel in der Datei /word/document.xml gespeichert und in der Datei /word/_rels/document.xml.rels befinden sich dann die Verweise auf die eingebetteten Bilder. Es gibt immer eine Datei /_rels/.rels, in der die package relationships gespeichert sind und der main part festlegt wird. Diese Datei ist die erste Datei, die beim Öffnen gelesen wird.
+docProps-Verzeichnis
+    Das /docProps-Verzeichnis enthält in den Dateien core.xml, app.xml und custom.xml diverse Dokumenteigenschaften (Metadaten) wie Autor, Speicherdatum etc. nach dem Dublin-Core-Standard (ISO 15836:2003) der „Dublin Core Metadata Initiative“ (DCMI).
+Dokumentdatenverzeichnis
+    Das Dokumentdatenverzeichnis (zum Beispiel /word) enthält die eigentlichen Dokumentdaten. Im Falle eines Textverarbeitungsdokuments zum Beispiel eine Datei document.xml, die gemäß WordprocessingML aufgebaut ist.
+
+Office MathML (OMML)
+
+Office Open XML verwendet die XML-basierte Auszeichnungssprache Office MathML (OMML) zur Beschreibung mathematischer Formeln.
+
+Das folgende Office-MathML-Beispiel beschreibt den Bruch: \frac{\pi}{2}
+
+<m:oMathPara>
+  <m:oMath>
+    <m:f>
+      <m:num><m:r>
+        <m:t>p</m:t>
+      </m:r></m:num>
+      <m:den><m:r>
+        <m:t>2</m:t>
+      </m:r></m:den>
+    </m:f>
+  </m:oMath>
+</m:oMathPara>
+
+Dokumenteneigenschaften
+
+Ein Metadatenbeispiel (docProps/core.xml) nach dem Dublin-Core-Standard:
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"
+  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>Office Open XML</dc:title>
+  <dc:subject>Aufbau des Dateiformats</dc:subject>
+  <dc:creator>Wikipedia</dc:creator>
+  <cp:keywords>Office Open XML, Metadaten, Dublin Core</cp:keywords>
+  <dc:description>Office Open XML verwendet ISO 15836:2003</dc:description>
+  <cp:lastModifiedBy>Wikipedia</cp:lastModifiedBy>
+  <cp:revision>1</cp:revision>
+  <dcterms:created xsi:type="dcterms:W3CDTF">2008-06-19T20:00:00Z</dcterms:created>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2008-06-19T20:42:00Z</dcterms:modified>
+  <cp:category>Dateiformat für Dokumente</cp:category>
+  <cp:contentStatus>Final</cp:contentStatus>
+</cp:coreProperties>
+
+Praktische Umsetzung
+
+Microsoft Office 2007 für Windows [32] und Microsoft Office 2008 für Mac OS X[33] unterstützen nur die veraltete Version ECMA-376 1st edition von Office Open XML, die von der ISO abgelehnt wurde, der ISO-Standard 29500 wird nicht vollständig unterstützt.[34][35] Microsoft Office 2010 für Windows ermöglicht erstmals den Lesezugriff auf Dateien gemäß ISO-Standard 29500, doch voll unterstützt wird der Standard erst in Microsoft Office 2013 für Windows.[36] Für ältere Microsoft-Office-Versionen (ab Version 2000) bietet Microsoft ein „Compatibility Pack“ [37], das es ermöglicht, das nicht ISO-konforme Format zu lesen und zu schreiben.
+
+Eine Reihe weiterer Programme unterstützt Office-Open-XML-Formate, wobei in allen Implementierungen bislang die Kompatibilität zur veralteten Version ECMA-376 1st edition im Vordergrund steht und nicht die Implementierung des ISO-Standards.
+
+Solche weiteren Office-Pakete mit Office-Open-XML-Unterstützung sind SoftMaker Office 2010 (Import und Export von .docx, Import von .xlsx), Corel WordPerfect Office ab Version X4 (nur Import) [38], ThinkFree Office ab Version 3.5[39], OpenOffice.org ab Version 3.0[40] und die OpenOffice.org-Abspaltungen NeoOffice und LibreOffice. Apple unterstützt Office-Open-XML-Dateien in seinem Officeprodukt iWork ab Version ’08 sowie in TextEdit ab Mac OS X 10.5.
+
+Der Dokumentenbetrachter TextMaker Viewer 2010 kann Office-Open-XML-Dateien öffnen, anzeigen und ausdrucken. Außerdem erlaubt er die Wandlung dieser Dateien ins PDF-Format. Die Tabellenkalkulation Gnumeric[41] und die Textverarbeitung AbiWord[42][43] bieten Import- und auch Exportfunktionen.
+
+Im Juni 2008 wurde für Office Open XML ein SDK von Microsoft zur Verfügung gestellt. Es erlaubt die Bearbeitung, Anlage, Prüfung und Modifizierung der Daten.[44] Das SDK 1.0 basiert auf .NET 3.0.[45] Entgegen anderslautenden Meldungen wird für die Benutzung kein Officeprodukt benötigt.[46]
+Kritik
+
+Office Open XML wird von verschiedenen Seiten kritisiert, unter anderem von den OpenDocument-Befürwortern IBM und Sun Microsystems sowie von Mitgliedern der Open-Source-Bewegung, die im GrokDoc-Wiki eine Liste von Einwänden gegen die Aufnahme von Office Open XML als ISO-Standard veröffentlicht haben.[47]
+
+Kritisiert wird dabei der Umfang der Spezifikation mit über 6000 Seiten. Kritiker gehen davon aus, dass nur Microsoft die Spezifikation in vollem Umfang umsetzen könne, während es für Softwarehersteller von Konkurrenzprodukten praktisch unmöglich sei, das Dateiformat vollständig in ihre Anwendungen zu implementieren.[48][49][50]
+
+Darüber hinaus verwendet Office Open XML nicht die W3C-Empfehlungen MathML für die Formeldarstellung oder SVG für die Darstellung von Vektorgrafiken, sondern speichert diese Elemente in von Microsoft entwickelten Formaten.
+
+Zudem widerspreche die Norm einigen ISO-Normen, beispielsweise der Norm für die Darstellung von Datum und Uhrzeit oder der Norm für die Abkürzung von Bezeichnungen von Sprachen.[51] Zudem wird angeführt, dass Office Open XML als Ganzes einer bestehenden ISO-Norm widersprechen könnte, nämlich der Norm ISO/IEC 26300:2006 (OpenDocument).[52]
+
+Microsoft übt Druck auf Politiker aus, um den Einsatz des konkurrierenden Formats OpenDocument-Formats zu verhindern. Falls Abstimmungen nicht nach dem Wunsch von Microsoft verlaufen, würden alle Ausgaben für Forschung und Soziales in den Bezirken eingestellt.[53][54]
+Weblinks
+
+    Das Microsoft-Office-Open-XML-Format (deutsch)
+    Ecma International Standard ECMA-376 Office Open XML File Formats (englisch)
+    Einwände gegen das Dateiformat Office Open XML bei Grokdoc (englisch)
+    Offizielle Webcast-Serie: Das Open XML SDK 2.0 (CTP) von MSDN (deutsch)
+    Office Open XML weiterführende Informationen zu diesem und verwandten Themenbereichen (deutsch)
+
+Einzelnachweise
+
+http://www.iana.org/assignments/media-types/application/
+Ecma Office Open XML File Formats Standard – Final draft – 9th of October 2006
+ntz Fachzeitschrift für Informations- und Kommunikationstechnik, VDE-Verlag, Heft 3-4/2008
+ECMA-376 (englisch)
+Publication of ISO/IEC 29500:2008, 19. November 2008, englisch
+Microsoft Office Binary (doc, xls, ppt) File Formats. Microsoft, 2008, abgerufen am 29. September 2010 (englisch).
+Microsoft Knowledge Base: INFO: Microsoft Excel 2002 and XML (englisch)
+Microsoft Developer Network: XML Spreadsheet Reference (englisch)
+Microsoft: Bringing the XML Vision to the Desktop with Office 2003 (englisch)
+Microsoft: Ecma International Standardization of OpenXML File Formats Frequently Asked Questions (englisch)
+Gary Edwards: Kommentar zu: „An Antic Disposition: Follow the Leader“ (englisch)
+Ecma International: Status Report: TC45 – Ecma Office Open XML File Formats Standard, 17. August 2006, Redmond, Washington, USA (englisch)
+Ecma International: Ecma International approves Office Open XML standard, Geneva, 7. Dezember 2006 (englisch)
+http://file.sunshinepress.org:54445/iec-cetral-office-on-the-fast-track-process-2007.pdf ISO/IEC JTC 1 N 8670 Fast Track Process
+Vote closes on draft ISO/IEC DIS 29500 standard. ISO, 4. September 2007, abgerufen am 30. September 2010.
+Gegner von Microsofts OpenXML für Abbruch der ISO-Standardisierung. heise online, 5. September 2007, abgerufen am 30. September 2010.
+Microsoft erhält Negativ-Auszeichnung für OpenXML-Kampagne. heise online, 2. Oktober 2007, abgerufen am 30. September 2010.
+Microsofts Dokumentenformat OOXML wird wohl ISO-Norm. heise online, 31. März 2008, abgerufen am 30. September 2010: „Beim norwegischen Standardisierungsgremium sollen demnach nur zwei Parteien für OOXML und 21 dagegen gestimmt haben. Trotzdem habe das Ergebnis letztlich „Ja“ für Microsofts Format gelautet.“
+An open letter from SC 34 participants in the Oslo plenary (englisch)
+Four national standards bodies appeal against approval of ISO/IEC DIS 29500 (englisch)
+ISO and IEC members give go ahead on ISO/IEC DIS 29500, 15. August 2008 (englisch)
+Microsoft Office 2007 Fails OOXML Conformance Tests, Alex Brown Admits, Hopes For the Best.
+Publication of ISO/IEC 29500:2008, 19. November 2008, englisch
+http://www.beuth.de/de/norm/iso-iec-29500-1-2-3-4/165471185?SearchID=428048069
+ISO: Publicly Available Standards (englisch)
+Ecma International: What is Ecma International (englisch)
+Microsoft: Microsoft Covenant Regarding Office 2003 XML Reference Schemas
+Baker & McKenzie: Standardisation and Licensing of Microsoft’s Office Open XML Reference Schema (englisch)
+Brian Jones: No license needed to use the Office Open XML formats (englisch)
+Microsoft: Microsoft Open Specification Promise
+SFLC warnt vor Microsofts Patentversprechen
+Microsoft will offenes Dokumentenformat ODF unterstützen (Update). heise online, 22. Mai 2008, abgerufen am 30. September 2010.
+Dieter Brors, Office 2008, in: c't special 2/2008, Mac, Seiten 62ff., 63.
+Griffin Brown: OOXML and Office 2007 Conformance: a Smoke Test (englisch)
+Jörg Thoma: ISO: Microsoft lässt OOXML-Standard verwaisen (Update). Golem.de, 7. April 2010, abgerufen am 30. September 2010.
+Jim Thatcher: New file format options in the new Office. In: Office Next (Blog von Gray Knowlton). 13. August 2012, abgerufen am 5. März 2013 (englisch).
+Microsoft Download Center: Microsoft Office Compatibility Pack für Dateiformate von Word, Excel und PowerPoint 2007
+Corel: Corel WordPerfect Office X4 Standard Edition - Compatible (englisch)
+What's New in ThinkFree Office v3.5
+OpenOffice.org: OpenOffice.org Pressemitteilung vom 13. Oktober 2008 (deutsch)
+GNOME: GNOME Office / Gnumeric - Gnumeric Stable 1.8 Series (englisch)
+Abisource: AbiWord v2.6.0 Release Notes (englisch)
+Abisource: AbiWord v2.6.5 Release Notes (englisch)
+Erstes Entwicklungskit für Open XML von Microsoft. heise online, 11. Juni 2008, abgerufen am 29. September 2010.
+Informationen zum Open XML SDK 2.0 für Microsoft Office. In: msdn. Microsoft Corporation, abgerufen am 29. September 2010.
+Erste Schritte mit dem Open XML SDK 2.0 für Microsoft Office. In: msdn. Microsoft Corporation, abgerufen am 29. September 2010.
+Einwände gegen die Standardisierung im GrocDoc-Wiki
+Bob Sutor: Is Open XML a one way specification for most people? 16. Oktober 2006, abgerufen am 29. September 2010.
+Is OpenXML now a standard? Free Software Foundation Europe, 8. Dezember 2006, abgerufen am 29. September 2010 (englisch).
+Office Open XML ist ISO-Norm (Update). Golem.de, 1. April 2008, abgerufen am 29. September 2010.
+Grokdoc: Ecma 376 contradicts numerous international standards
+GrokDoc: ISO/IEC 26300 (OpenDocument Format for Office Applications)
+http://www.golem.de/news/limux-kopf-einziehen-und-ueber-verschwoerung-tuscheln-1412-110908.html
+
+    http://www.computerweekly.com/news/2240234078/Government-open-standards-the-curious-case-of-Microsoft-and-the-minister
+
+Kategorien:
+
+    XML-basierte Sprache
+    Microsoft Office

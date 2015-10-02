@@ -1,0 +1,58 @@
+Specifications Available 33 3.000 11 high
+Rendering Software Available 32 2.909 11 high
+Expertise Available 30 2.727 11 high
+Backward/Forward Compatibility 29 2.636 11 high
+Community/3rd Party Support 29 2.636 11 high
+Ubiquity 29 2.636 11 high
+Complexity 27 2.455 11 high
+Legal Restrictions 27 2.455 11 high
+Technical Dependencies 26 2.364 11 middle
+Specification Quality 23 2.300 10 middle
+Standardization 25 2.273 11 middle
+Cost 25 2.273 11 middle
+Ease of Identification 24 2.182 11 middle
+Ease of Validation 24 2.182 11 middle
+Error-tolerance 22 2.091 11 middle
+Value 20 2.000 10 middle
+Revision Rate 21 1.909 11 low
+Geographic Spread 19 1.900 10 low
+Domain Specificity 19 1.900 10 low
+Developer/Corporate Support 20 1.818 11 low
+Lifetime 20 1.818 11 low
+Technical Protection Mechanism 20 1.818 11 low
+Metadata Support 18 1.636 11 low
+Institutional Policies 16 1.600 10 low
+Compression 17 1.545 11 low
+Availability Online 15 1.500 10 low
+Storage Space 15 1.364 11 low
+Viruses 13 1.300 10 low
+
+
+Exemplarily selected file formats with retrieved information for associated measurement metrics
+Risk Factor DXF
+Is Popular Format 5/L
+Operation Systems 4/M
+Software Count 21/M
+Vendors Count 1/M
+Versions Count 23/H
+Has Description 2/H
+
+Has MIME type -/H
+Existence Period +/L
+Is Complex Format +/H
+Is Wide Disseminated -/H
+
+Is Outdated or Deprecated +/H
+Has Genre -/H
+Has Homepage -/H
+Is Open (Standardised) -/H
+
+Has Creation Date -/H
+Has File Migration Support +/L
+Digital Rights Information -/H
+Has Publisher Information -/H
+
+Has Creator Information -/H
+Has Compression Support -/L
+Supported by Web Browser +/L
+Has Vendor Support +/L

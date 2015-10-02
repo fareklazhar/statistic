@@ -1,0 +1,3 @@
+Web page coded in HTML that can be displayed in a Web browser; formats text, tables, images, and other content that is displayed on the page; most pages within static websites have an "." extension.
+
+The source code is parsed by the Web browser and is typically not seen by the user. If you want to view the HTML of a Web page, select "View Source" from the Web browser's View menu. Since files are saved in a standard text format, they can be opened and edited with a basic text editor.

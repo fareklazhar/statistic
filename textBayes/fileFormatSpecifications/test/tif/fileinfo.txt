@@ -1,0 +1,3 @@
+-compliant geospatial image file created in the GeoTIFF format; contains geographic or cartographic data embedded as tags within the file; enables users to embed GIS data in the file without deviating from the  (Tagged Image File Format) format.
+
+Since GeoTIFF files contain coordinates, GIS applications can map specific regions of the raster image to latitude and longitude coordinates.

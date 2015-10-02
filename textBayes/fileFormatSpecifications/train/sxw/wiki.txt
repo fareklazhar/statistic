@@ -1,0 +1,118 @@
+OpenOffice.org XML
+From Wikipedia, the free encyclopedia
+"Open Office XML" redirects here. It is not to be confused with Office Open XML.
+This article is about the default file format used by OpenOffice.org 1. For the default file format of later OpenOffice.org versions and an international standard, see OpenDocument.
+
+OpenOffice.org XML is an open XML-based file format developed as an open community effort[1][2][3] by Sun Microsystems in 2000–2002. The open-source software application suite OpenOffice.org 1.x and StarOffice 6 and 7 used the format as their native and default file format for saving files. The OpenOffice.org XML format is no longer widely used, but it is still supported in recent versions of OpenOffice.org-descended software.
+
+OpenDocument (ISO/IEC 26300:2006) is based on OpenOffice.org XML and these formats are very similar in many technical areas.[4][5] However, OpenDocument is not the same as the older OpenOffice.org XML format and these formats are not directly compatible. In 2005, OpenOffice.org (since version 2.0) and StarOffice (since version 8) switched to OpenDocument as their native and default format.[6][7]
+
+Contents
+
+    1 History
+    2 File formats
+    3 Implementations
+    4 See also
+    5 References
+    6 External links
+
+History
+
+StarOffice developers adopted XML to replace the old binary StarOffice file format. The draft version was also known as StarOffice XML File Format.[8]
+
+The stated goal in the draft was:
+
+    Our goal is twofold: to have a complete specification encompassing all StarOffice components, and to provide an open standard for office documents.
+
+File formats
+
+The format uses XML files to describe the documents. To minimize space, the files are compressed into an archive and given a suffix depending on what sort of data is contained in them.
+File type 	OpenOffice.org/StarOffice component 	File (template) suffixes 	MIME
+Text 	Writer 	sxw (stw) 	application/vnd.sun.xml.writer
+application/vnd.sun.xml.writer.template[9]
+Spreadsheet 	Calc 	sxc (stc) 	application/vnd.sun.xml.calc
+application/vnd.sun.xml.calc.template
+Graphics 	Draw 	sxd (std) 	application/vnd.sun.xml.draw
+application/vnd.sun.xml.draw.template
+Presentation 	Impress 	sxi (sti) 	application/vnd.sun.xml.impress
+application/vnd.sun.xml.impress.template
+Formula 	Math 	sxm 	application/vnd.sun.xml.math
+Master document 	Writer 	sxg 	application/vnd.sun.xml.writer.global
+HTML 	Writer 	html (stw) 	text/html
+application/vnd.sun.xml.writer.web
+Implementations
+See also: Comparison of word processors
+See also: Comparison of spreadsheets
+
+    Abiword (SXW)[10]
+    Apache OpenOffice
+    EditGrid Viewer (SXC)[11]
+    Gnumeric (SXC)[12]
+    Google Docs (SXW, import only)
+    KOffice (SXW, SXC, SXI)
+    LibreOffice (as of 4.3, import only)
+    OpenOffice.org
+    StarOffice/Oracle Open Office
+    SoftMaker Office 2006
+        TextMaker 2006 (SXW, import only)[13]
+        TextMaker Viewer (SXW, view only)[14]
+    Visioo-Writer (limited support)
+    Zoho Office (SXW, SXC, SXI - view/edit/convert files)[15][16][17]
+        Zoho Viewer (SXW, SXC, SXI - view/convert files)[18][19]
+        Zoho QuickRead - a Firefox/Internet Explorer plug-in for online Viewer[20]
+
+See also
+
+    List of document markup languages
+    Comparison of document markup languages
+
+References
+
+OpenOffice.org Foundation (2000-07-19). "Welcome to the OpenOffice.org Source Project (archived website)". Archived from the original on 2000-08-15. Retrieved 2010-08-08.
+OpenOffice.org Foundation (2000-08-10). "The OpenOffice.org Project". Archived from the original on 2000-08-23. Retrieved 2010-08-08.
+"History of OpenDocument". 2006-08-28. Retrieved 2010-08-08.
+"OpenOffice.org XML File Format". Retrieved 2010-03-27.
+"file extension SXW - OpenOffice.org Writer document". Retrieved 2010-03-27.
+"Sun Introduces New Version of StarOffice Software" (Press release). Sun Microsystems, Inc. 2005-09-27. Archived from the original on 5 April 2006. Retrieved 2006-04-05.
+"OpenOffice.org 2.0 Is Here" (Press release). OpenOffice.org. 2005-10-20. Retrieved 2007-09-20.
+StarOffice XML File Format Working Draft, Technical Reference Manual, Draft 9, December 2000 (PDF), December 2000, retrieved 2010-08-08
+"Mime Content Types used in OpenOffice.org1.0 / StarOffice 4.x and later". Retrieved 2010-06-05.
+"Abiword PluginMatrix". Retrieved 2010-03-27.
+"EditGrid Viewer". Retrieved 2010-03-27.
+"The file formats which Gnumeric can read". Retrieved 2010-03-27.
+"SoftMaker Office 2006 for Windows". Retrieved 2010-03-27.
+"TextMaker Viewer 2010". Retrieved 2010-03-27.
+"Zoho Sheet Features". Retrieved 2010-03-27.
+"Zoho Writer - Frequently Asked Questions". Retrieved 2010-03-27.
+"Zoho Show 2.0 - Frequently Asked Questions & Answers". Retrieved 2010-03-27.
+"Zoho Viewer". Retrieved 2010-03-27.
+"Zoho Sheet - Online Excel Viewer". Retrieved 2010-03-27.
+
+    "Zoho QuickRead". Retrieved 2010-03-27.
+
+External links
+
+    OpenOffice.org XML File Format — File Format Specification and General Information
+    Thinking XML: The open office file format - IBM technical library (January 1, 2003)
+
+[show]
+
+    v
+    t
+    e
+
+Multi-purpose office document file formats
+[show]
+
+    v
+    t
+    e
+
+OpenOffice.org
+Categories:
+
+    Open formats
+    Markup languages
+    Document-centric XML-based standards
+    Office document file formats
+    OpenOffice

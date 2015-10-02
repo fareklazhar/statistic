@@ -1,0 +1,101 @@
+
+    ID: fdd000153
+    Short name: PNG
+    Content categories: still-image
+    Format Category: file-format, encoding
+    Other facets: unitary, binary, unstructured, sampled
+    Last significant FDD update: 2009-03-08
+    Draft status: Partial
+
+
+Identification and description Explanation of format description terms
+Full name 	PNG (Portable Network Graphics)
+Description 	The PNG specification defines both a datastream and an associated file format for a lossless, portable, compressed, raster (bit-mapped) image. PNG is fully streamable with a progressive display option. Indexed color, greyscale, and RGB color (referred to as truecolor in the specification) are supported, with optional transparency (alpha channel). PNG can store gamma and chromaticity data as well as a full ICC color profile for accurate color matching on heterogenous platforms. The PNG format was originally designed as an open standard to replace GIF_89a for use on the Internet, but is not limited to that use.
+Production phase 	May be an initial-state or middle-state format; more often used as final-state format.
+Relationship to other formats
+    Has subtype 	Has versions not separately described.
+
+Local use Explanation of format description terms
+LC experience or existing holdings 	None
+LC preference 	One of the acceptable formats for bitmapped images.
+
+Sustainability factors Explanation of format description terms
+Disclosure 	Open standard.
+    Documentation 	
+
+PNG (Portable Network Graphics) Specification, Version 1.2 (at http://www.libpng.org/pub/png/spec/1.2/PNG-Contents.html)
+
+ISO/IEC 15948:2004 Information technology -- Computer graphics and image processing -- Portable Network Graphics (PNG): Functional specification.
+
+W3C Portable Network Graphics (PNG) Specification (Second Edition), same text as ISO/IEC 15948:2004, at http://www.w3.org/TR/PNG/
+Adoption 	
+
+As of 2005, PNG was supported by most browsers. However, Internet Explorer 6.x for Windows did not support the transparency feature. Slow deployment of full browser support delayed, or even prevented widespread adoption. With the expiration of the LZW patent, the original objective, a patent-free standard to replace GIF, is no longer significant.
+
+National Archives of Australia has chosen PNG as the "preservation format" for bit-mapped images and converts images in other bit-map formats to PNG during its ingest process. Library and Archives Canada has adopted PNG as a recommended format for still images.
+    Licensing and patents 	None.
+Transparency 	Depends upon algorithms and tools for decompression to read; requires sophistication to build tools based on documentation.
+Self-documentation 	
+
+The PNG specification allows labeled text (ASCII or UTF-8) elements to be embedded in text chunks and predefines a few standard keywords (element labels): Title, Author, Description, Copyright, Creation Time, Software, Disclaimer, Warning, Source, Comment. The compilers of this resource are not able to assess the degree to which such metadata is found in practice or whether other keywords are in common use. An attempt in 2000 to develop open source tools to convert EXIF images (including EXIF metadata) to PNG seems to have been abandoned. See http://pmt.sourceforge.net/exif/drafts/d020.html. Without such tools and agreed practices, PNG can not rank highly for self-documentation.
+
+It is possible to embed XMP metadata in PNG files, according to the XMP specification. However, the documentation for ExifTool for PNG tags suggests that practices for storing XMP or EXIF metadata in PNG images have not been consistent.
+External dependencies 	None
+Technical protection considerations 	None
+
+Quality and functionality factors Explanation of format description terms
+Still Image
+Normal rendering 	Good support.
+Clarity (high image resolution) 	Excellent support, with support for progressive display for images retrieved over the Internet. The standard is flexible as to color space and bit depth, supporting indexed color, grayscale, and RGB color. RGB color data is often 8 bits-per-channel (24-bit RGB) but may be extended to 16 bits (48-bit RGB). The term truecolor is often used to refer to RGB color images with 24-bit or greater data.
+Color maintenance 	A PNG image can include chunks for gamma and chromaticity data and for a full ICC color profile.
+Support for vector graphics, including graphic effects and typography 	An alpha channel, representing transparency information on a per-pixel basis, can be included in grayscale and color PNG images. When transparency data is included in color images, the color space is sometimes called RGBA.
+Functionality beyond normal rendering 	None. Related formats, MNG and JNG, have been defined to support multi-page images and animation.
+
+File type signifiers Explanation of format description terms
+Tag 	Value 	Note
+Filename extension 	png
+	The PNG standard recommends the use of png as extension.
+Internet Media Type 	image/png
+	See registration at IANA.
+Magic numbers 	Hex: 89 50 4e 47 0d 0a 1a 0a
+ASCII: \211 P N G \r \n \032 \n
+	Documented in PNG standard.
+Mac OS file type 	PNGf
+	Documented in PNG standard.
+
+Notes Explanation of format description terms
+General 	 
+History 	
+
+The original specification for PNG, version 1.0, was developed by the independent PNG development group and released under the auspices of the World Wide Web Consortium (W3C) on 1 October 1996 as its first Recommendation. On 15 January 1997 it was released by the IETF as RFC 2083. The PNG specification was updated to version 1.1 on 31 December 1998. It included new chunks for cross-platform color correction (sRGB and iCCP), a revised and much more sensible description of gamma correction, and a number of other minor improvements and clarifications (all fully backward compatible, of course!). A second, more minor update (version 1.2) was released in August 1999; its only change was the addition of the iTXt chunk (international text).
+
+Version 1.2 was submitted to ISO/IEC as a proposed standard in 1999. The ISO/IEC standard was published in March 2004 as ISO/IEC 15948:2004. W3C published equivalent text as Portable Network Graphics (PNG) Specification (Second Edition) at http://www.w3.org/TR/PNG/ in November 2003.
+
+Format specifications Explanation of format description terms
+
+    PNG (Portable Network Graphics) Specification, Version 1.2 (http://www.libpng.org/pub/png/spec/1.2/PNG-Contents.html).
+    Portable Network Graphics (PNG) Specification (Second Edition) (http://www.w3.org/TR/PNG/). From W3C.
+    ISO/IEC 15948:2004. Information technology -- Computer graphics and image processing -- Portable Network Graphics (PNG): Functional specification
+
+
+Useful references
+URLs
+
+    Portable Network Graphics (PNG) Home Site (http://www.libpng.org/pub/png/).
+    PNG, The Definitive Guide (http://www.libpng.org/pub/png/book/). 1999 book by Greg Roelofs, originally published by O'Reilly. Released online by the author in 2003 (after going out of print), with minor updates.
+    http://www.ietf.org/rfc/rfc2083.txt
+    http://www.w3.org/Graphics/PNG/
+    PNG Tags (http://www.sno.phy.queensu.ca/~phil/exiftool/TagNames/PNG.html). From documentation for ExifTool by Phil Harvey
+    Le Format PNG (http://pin.association-aristote.fr/lib/exe/fetch.php/public/presentations/2003/pin20030904format_png.pdf). 2003 presentation (in French) by Nicolas Lormant. Covers history and objectives.
+    The Encyclopedia of Graphic File Formats, 2nd Edition, 1996 (EGFF) has information on this format. See print citation below. Online access is available at:
+        EGFF: PNG File Format Summary (http://www.fileformat.info/format/png/egff.htm). From FileFormat.Info. This presentation states that the work has been released under a Creative Commons Attribution license.
+        EGFF: PNG File Format Summary (http://web.archive.org/web/20071210094024/http://www.fileformat.info/format/png/egff.htm). From FileFormat.Info, via Internet Archive's Wayback Machine. Included because FileFormat.info has not been updated recently (as of November 2012) and was not functioning for a period.
+        EGFF: PNG (http://netghost.narod.ru/gff/graphics/summary/png.htm). Copy made available from a site in Russia.
+    Library and Archives Canada recommended formats (http://www.collectionscanada.gc.ca/obj/012018/f2/012018-2200-e.pdf).
+    Dissecting the Digital Preservation Software Platform (http://www.naa.gov.au/Images/Digital-Preservation-Software-Platform-v1_tcm16-47139.pdf). From National Archives of Australia. NAA preservation formats are listed in chapter 3.
+
+
+Books, articles, etc.
+
+    Murray, James D. and William vanRyper. Encyclopedia of Graphics File Formats, 2nd Edition. Sebastopol, CA. : O'Reilly & Associates, 1996. Includes CD-ROM with complete text of book, and copies of several file format specifications.
+

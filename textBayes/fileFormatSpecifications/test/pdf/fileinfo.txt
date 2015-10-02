@@ -1,0 +1,5 @@
+Cross-platform document created by Adobe Acrobat or a program with the Acrobat plug-in; commonly used for e-mail attachments or for saving publications in a standard format for viewing on multiple computers; usually created from another document instead of from scratch; can be edited with Adobe Acrobat, a commercial program.
+
+files can be opened and viewed using the free Adobe Reader or the Adobe Reader plug-in, which is available for most Web browsers. Google, Bing, and other search engines now index documents, so the Adobe Reader plug-in is commonly used when viewing search engine results. Some browsers, such as Google Chrome, provide native support for viewing without the Adobe Reader plug-in. Also, Firefox can view PDF files with the .js extension.
+
+files may contain text, images, forms, annotations, outlines, and other data. They preserve fonts and formatting electronically across multiple platforms and appear the same on the screen as they will when printed on paper.

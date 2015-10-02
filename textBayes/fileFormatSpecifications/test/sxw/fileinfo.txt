@@ -1,0 +1,3 @@
+Word processing document originally created by StarOffice Writer, the word processor included with StarOffice suite; based on the OpenDocument XML format and is compatible with Apache OpenOffice (formerly OpenOffice.org) Writer, the successor to StarOffice Writer.
+
+Apache OpenOffice now uses .ODT files to save documents.

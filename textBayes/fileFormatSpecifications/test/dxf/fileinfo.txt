@@ -1,0 +1,3 @@
+Data format developed by Autodesk and used for CAD (computer-aided design) vector image files, such as AutoCAD documents; similar to the .DWG format, but is more compatible with other programs since it is ASCII (text) based.
+
+The DXF format was developed as a universal format so that AutoCAD documents could be opened more easily with other programs. For example, the Valve Hammer Editor can export 3D models as files, which can be opened and edited with other 3D modeling applications.

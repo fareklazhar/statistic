@@ -1,0 +1,3 @@
+Word processing document created by Microsoft Word, a word processor included with all versions of Microsoft Office; may contain formatted text, images, tables, graphs, charts, page formatting, and print settings.
+
+NOTE: Microsoft Word 2007 and later saves documents in the OpenXML format with a .X extension.

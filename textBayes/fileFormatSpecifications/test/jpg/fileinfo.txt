@@ -1,0 +1,3 @@
+Compressed image format standardized by the Joint Photographic Experts Group (); commonly used for storing digital photos since the format supports up to 24-bit color; therefore, most digital cameras save images as JPG files by default.
+
+is also a common format for publishing Web graphics since the JPEG compression algorithm significantly reduces the file size of images. However, the lossy compression used by JPEG may noticeably reduce the image quality if high amounts of compression are used.

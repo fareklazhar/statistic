@@ -1,0 +1,5 @@
+Image file stored in the Portable Network Graphic () format; contains a bitmap of indexed colors and uses lossless compression, similar to a . file but without copyright limitations; commonly used to store graphics for Web images.
+
+The format was created in response to limitations with the GIF format, primarily to increase color support and to provide an image format without a patent license. Additionally, while images only support fully opaque or fully transparent pixels, images may include an 8-bit transparency channel, which allows the image colors to fade from opaque to transparent.
+
+images cannot be animated like images. However, the related . format can be animated. images do not provide CMYK color support because they are not intended for use with professional graphics. PNG images are now supported by most Web browsers.

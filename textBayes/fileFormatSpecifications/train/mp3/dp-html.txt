@@ -1,0 +1,77 @@
+
+    ID: fdd000105
+    Short name: MP3_FF
+    Content categories: sound
+    Format Category: file-format
+    Other facets: unitary, binary, sampled
+    Last significant FDD update: 2010-06-29
+    Draft status: Full
+
+
+Identification and description Explanation of format description terms
+Full name 	MP3 File Format
+Description 	De facto file format for sound that wraps MP3_ENC bitstreams, which may be post- or prepended by the informally specified ID3 metadata blocks.
+Production phase 	Generally used for final-state, end-user delivery.
+Relationship to other formats
+    Contains 	MP3_ENC, MP3 (MPEG Layer III Audio Encoding)
+    May contain 	ID3v1, ID3 Metadata, Version 1
+    May contain 	ID3v2, ID3 Metadata, Version 2
+
+Local use Explanation of format description terms
+LC experience or existing holdings 	Used extensively as non-streaming service format for American Memory. Currently one of the accepted formats for electronic registration of audio by the U.S. Copyright Office in the eCO program.
+LC preference 	See MP3_ENC
+
+Sustainability factors Explanation of format description terms
+Disclosure 	Not documented
+    Documentation 	See MP3_ENC and its subtypes for documentation of the bitstream. See ID3 and its subtypes for documentation of the metadata blocks.
+Adoption 	Very widely adopted for World Wide Web dissemination and playback on specialized devices.
+    Licensing and patents 	None for the file structure; see MP3_ENC for discussion of patent claims pertaining to the bitstream.
+Transparency 	See MP3_ENC
+Self-documentation 	See MP3_ENC and ID3 and its subtypes.
+External dependencies 	None
+Technical protection considerations 	None.
+
+Quality and functionality factors Explanation of format description terms
+Sound
+Normal rendering 	Good support.
+Fidelity (high audio resolution) 	See MP3_ENC
+Multiple channels 	See MP3_ENC
+Support for user-defined sounds, samples, and patches 	None
+Functionality beyond normal rendering 	None. See also ID3v2.
+
+File type signifiers Explanation of format description terms
+Tag 	Value 	Note
+Filename extension 	mp3
+	There is no "official" file format associated with MPEG-1 and MPEG-2 content. Many MP3 files contain both the audio bitstream and ID3 metadata.
+
+Various auxiliary or related files exist; for example, m3u and pls files contain playlists associated with MP3; each of these formats works well with some players and not with others.
+Internet Media Type 	audio/mpeg
+	From IETF (Internet Engineering Task Force) RFC 3003
+Internet Media Type 	audio/x-mpeg
+audio/mp3
+audio/x-mp3
+audio/mpeg3
+audio/x-mpeg3
+audio/mpg
+audio/x-mpg
+audio/x-mpegaudio
+	Additional examples selected from The File Extension Source.
+Magic numbers 	Hex: FF FB 30
+	From The File Extension Source. The compiler of this document seeks confirmation of the accuracy of these numbers, or about their applicability to all variants of MP3. The standards document for the MP3_ENC bitstream (ISO/IEC 11172-3:1993, section 2.4.2.3, p. 20) states that MPEG-1 audio headers begins with "1111 1111 1111" (syncword) followed by "1" (for this standard), followed by "01" for layer III, followed by "1" if the stream has no redundancy, and then provides bits that indicate stream's bitrate. The bitstream "1111 1111 1111 1011" has "FFFB" as its hexadecimal equivalent.
+ID3 marker 	ASCII: 3DI
+	When ID3 metadata is placed in a MP3_FF file, established conventions call for this marker. For ID3v1, the marker is positioned 10 bytes preceding the metadata. For ID3v2 data, the marker is positioned in the first 3 bytes of the file when the metadata is pre-pended and 10 bytes from the end of a file when it is post-pended.
+
+Notes Explanation of format description terms
+General 	 
+History 	 
+
+Format specifications Explanation of format description terms
+
+    See Disclosure under Sustainability factors.
+
+
+Useful references
+URLs
+
+    ID3 (http://en.wikipedia.org/wiki/ID3). article in Wikipedia, consulted February 2007 .
+

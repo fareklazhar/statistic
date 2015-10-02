@@ -1,0 +1,5 @@
+Compressed audio format developed by the Moving Picture Experts Group; uses "Layer 3" audio compression; commonly used to store music files and audiobooks on a hard drive; may provide near-CD quality sound (stereo, 16-bit) in a file roughly 1/10 the size of a .WAV or .AIF file.
+
+The quality of an MP3 file depends largely on the bit rate used for compression. Common bit rates are 128, 160, 192, and 256 kbps. Higher bit rates result in higher quality files that also require more disk space.
+
+MP3 files are supported by most portable music players, such as the Apple iPod and Microsoft Zune. They can also be played on the Amazon Kindle. Symbian OS mobile phones can play MP3 files using the UltraMP3 program.

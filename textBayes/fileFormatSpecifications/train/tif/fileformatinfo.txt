@@ -1,0 +1,629 @@
+The TIFF File Format
+	
+Share on stumbleuponShare on redditShare on twitterShare on facebookMore Sharing Services
+
+Also known as: TIF
+Original Documentation
+
+--------I-TIFF------------------------------
+The TIFF file format was designed jointly by Aldus and Microsoft with leading
+scanner vendors to faciliate incorporating scanned images into publishing.
+The described TIFF specification is TIFF 5.0. A TIFF file consists of several
+different blocks which define the palette data or the LZW-compressed body
+among other things. TIFF files can be in Motorola _or_ Intel byte order,
+depending on the first word. If it is 'II', the byte order is in Intel order,
+if it is 'MM', then you have Motorola byte ordering.
+
+Each TIFF file begins with a image file header which points to one or more image
+file directories, which contain the image data and image information.
+
+The format of the image header :
+OFFSET              Count TYPE   Description
+0000h                   2 char   ID='II', ID='MM'
+								 This is the identification, 'II' stands for
+								 Intel byte order, 'MM' for Motorola byte
+								 order. The following data must be interpreted
+								 accordingly !
+0002h                   1 word   TIFF "version number". This version number
+								 never changed and the value (42) was choosen
+								 for its deep philosophical value. In fact, if
+								 the version number ever changes, this means
+								 that radical changes to the TIFF format have
+								 been made, and a TIFF reader should give up
+								 immediately.
+								 You can consider this word to be a part of the
+								 header ID.
+0004h                   1 dword  Offset of first image directory in file form
+								 start of file.
+								 The first image directory must begin on an
+								 even byte boundary. The image directory may
+								 follow the image data it describes. The
+								 image directory is described below.
+
+An organization  may wish to store information that is meaningful to only that
+organization in a TIFF file. Tags numbered 32768 or higher are reserved for
+that purpose. Upon request, the administrator will allocate and register a block
+of private tags for an  organization.
+Private enumerated values can be accommodated in a similar fashion.
+
+The format of the image file directory (IFD) :
+All entries are sorted in ascending order by the tag field.
+OFFSET              Count TYPE   Description
+0000h                   1 word   Number of entries
+								 ="NUM"
+0002h               "NUM" rec    Field descriptor
+						1 word   Field tag, see below
+						1 word   Field type
+								   1 - byte
+								   2 - ASCII string, counted in length.
+									   Most often an ASCIIZ string, the
+									   trailing zero is counted with the
+									   data length.
+								   3 - word
+								   4 - dword / uword
+								   5 - rational (2 dwords, numerator and denominator)
+						1 dword  Length of the field in units of the data type.
+								 A single 16-bit word has the length 1.
+						1 dword  Data offset of the field. The data starts
+								 on a word boundary, thus the dword should
+								 be even. The data for the field may be
+								 anywhere in the file, even after the image
+								 data. If the data size is less or equal to
+								 4 bytes (determined by the field type and
+								 length), then this offset is not a offset
+								 but instead the data itself, to save space.
+								 If the data size is less than 4 bytes, the
+								 data is stored left-justified within the 4
+								 bytes of the offset field.
+0002h+
+ "NUM"*12               1 dword  Offset of next IFD in file, 0 if none follow
+
+If a certain field in the IFD does not exist, you have to presume the default
+values. The different fields are :
+
+--- BitsPerSample
+Tag  = 258  (102)
+Type = word
+N    = SamplesPerPixel
+Default = 1
+
+Number of bits per sample. Note that this tag allows a different number of
+bits per sample for each sample corresponding to a pixel. For example, RGB
+color data could use a different number of bits per sample for each of the
+three color planes.
+
+--- ColorMap
+Tag  = 320 (140)
+Type = word
+N    = 3 * (2**BitsPerSample)
+No default.ColorMap must be included in all palette color images.
+
+This tag defines a Red-Green-Blue color map for palette color images.
+The palette color pixel value is used to index into all 3 subcurves.
+The subcurves are stored sequentially. The Red entries come first, followed
+by the Green entries, followed by the Blue entries.
+The width  of each entry is 16 bits, as implied by the type of word.
+0 represents the minimum intensity, and 65535 represents the maximum intensity.
+
+--- ColorResponseCurves
+Tag  = 301 (12D)
+Type = word
+N    = 3 * (2**BitsPerSample)
+Default: curves based on the NTSC recommended gamma of 2.2.
+
+This tag defines three color response curves, one each for Red, Green and Blue
+color information. The Red entries come first, followed by the Green entries,
+followed by the Blue entries. The length of each subcurve is  2**BitsPerSample,
+using the BitsPerSample value corresponding to the respective primary. The width
+of each entry is 16 bits, as implied by the type of word.
+The purpose of the color response curves is to refine the content of RGB color images.
+
+--- Compression
+Tag  = 259  (103)
+Type = word
+N    = 1
+Default = 1.
+
+1 =  No compression, but pack data into bytes as tightly as possible, with no
+	 unused  bits except  at the end of a row. The bytes are stored as an array
+	 of bytes, for BitsPerSample <= 8,  word if BitsPerSample > 8 and <= 16, and
+	 dword if BitsPerSample > 16 and <= 32. The byte ordering of data >8 bits
+	 must be consistent with that specified in the TIFF file header (bytes 0
+	 and 1). Rows are required to  begin on byte boundaries.
+
+2 =  CCITT Group 3 1-Dimensional Modified Huffman run length encoding.
+	 See ALGRTHMS.txt BitsPerSample must be 1, since this type of compression
+	 is defined only for bilevel images (like FAX images...)
+
+3 =  Facsimile-compatible CCITT  Group 3, exactly as specified in
+	 "Standardization of  Group 3  facsimile  apparatus  for  document
+	 transmission,"   Recommendation T.4,  Volume VII, Fascicle VII.3,
+	 Terminal Equipment  and Protocols  for  Telematic  Services,  The
+	 International  Telegraph  and  Telephone  Consultative  Committee
+	 (CCITT), Geneva,  1985, pages  16 through  31.   Each strip  must
+	 begin on  a byte  boundary.   (But recall  that an image can be a
+	 single strip.)   Rows  that are  not the first row of a strip are
+	 not required  to begin on a byte boundary.  The data is stored as
+	 bytes,  not words - byte-reversal  is   not  allowed.    See  the
+	 Group3Options field for Group 3 options such as 1D vs 2D coding.
+
+4 =  Facsimile-compatible CCITT  Group 4, exactly as specified in
+	 "Facsimile Coding  Schemes and Coding Control Functions for Group
+	 4 Facsimile Apparatus,"  Recommendation T.6, Volume VII, Fascicle
+	 VII.3, Terminal  Equipment and  Protocols for Telematic Services,
+	 The International  Telegraph and Telephone Consultative Committee
+	 (CCITT), Geneva,  1985, pages  40 through  48.   Each strip  must
+	 begin on  a byte  boundary.  Rows that are not the first row of a
+	 strip are  not required to begin on a byte boundary.  The data is
+	 stored as  bytes, not  words.   See the  Group4Options field  for
+	 Group 4 options.
+
+5 =  LZW Compression, for grayscale, mapped color, and full color images.
+	 See ALGRTHMS.txt
+
+32773 =  PackBits compression, a simple byte oriented run length scheme for
+		 1-bit images.  See Appendix C.
+
+		  Data compression only applies to raster image data, as pointed to
+		  by StripOffsets.
+
+--- GrayResponseCurve
+Tag  = 291 (123)
+Type = word
+N    = 2**BitsPerSample
+
+The purpose  of the  gray response curve and the gray units is to
+provide more  exact photometric  interpretation  information  for
+gray scale image data, in terms of optical density.
+
+--- GrayResponseUnit
+Tag  = 290 (122)
+Type = word
+N    = 1
+For historical  reasons, the  default is 2.  However, for greater
+accuracy, 3 is recommended.
+
+  1 = Number represents tenths of a unit.
+  2 = Number represents hundredths of a unit.
+  3 = Number represents thousandths of a unit.
+  4 = Number represents ten-thousandths of a unit.
+  5 = Number represents hundred-thousandths of a unit.
+
+--- ImageLength
+Tag  = 257  (101)
+Type = word or dword
+N    = 1
+No default.
+
+The image's length (height) in pixels (Y:vertical). The number of rows
+(sometimes described as "scan lines") in the image.
+
+--- ImageWidth
+Tag  = 256  (100)
+Type = word or dword
+N    = 1
+No default.
+
+The image's width, in pixels (X:horizontal). The number of columns in the image.
+
+--- NewSubfileType
+Tag =  254  (FE)
+Type = dword
+N = 1
+Default is 0.
+
+A general  indication of  the kind  of data  that is contained in
+this subfile.   This  field is  made up of a set of 32 flag bits.
+Unused bits are expected to be 0.  Bit 0 is the low-order bit.
+
+		  Currently defined values for the bitmap are:
+			0 - Image is reduced of another TIFF image in this file
+			1 - Image is a single page of a multi-page
+			2 - Image is a transparency mask for another image in this file
+
+--- PhotometricInterpretation
+Tag  = 262  (106)
+Type = word
+N    = 1
+No default.
+
+0 =  For bilevel  and grayscale  images:   0 is  imaged as white.
+	 2**BitsPerSample-1 is  imaged as  black.    If  GrayResponseCurve
+	 exists,  it   overrides  the   PhotometricInterpretation   value.
+
+1 =  For bilevel  and grayscale  images:   0 is  imaged as black.
+	 2**BitsPerSample-1  is  imaged  as  white.  If  GrayResponseCurve
+	 exists,  it   overrides  the   PhotometricInterpretation   value.
+
+2 =  RGB.  In the RGB model, a color is described as a combination
+	 of the  three primary  colors of  light (red, green, and blue) in
+	 particular concentrations.   For  each of  the three  samples,  0
+	 represents minimum intensity, and 2**BitsPerSample - 1 represents
+	 maximum intensity. For PlanarConfiguration = 1, the samples are stored in
+	 the indicated  order:   first Red,  then Green,  then Blue.   For
+	 PlanarConfiguration =  2, the  StripOffsets for the sample planes
+	 are stored  in the  indicated order:   first the Red sample plane
+	 StripOffsets, then  the Green  plane StripOffsets,  then the Blue
+	 plane StripOffsets.
+
+3 =  "Palette color."     In this  mode, a color is described with a
+	 single sample.   The  sample is  used as  an index into ColorMap.
+	 The sample  is used to index into each of the red, green and blue
+	 curve tables to retrieve an RGB triplet defining an actual color.
+	 When this  PhotometricInterpretation value  is  used,  the  color
+	 response curves  must also  be supplied.  SamplesPerPixel must be
+	 1.
+
+4 =  Transparency Mask.   This  means that  the image  is used to
+	 define an  irregularly shaped region of another image in the same
+	 TIFF  file.     SamplesPerPixel  and  BitsPerSample  must  be  1.
+	 PackBits compression  is recommended.    The  1-bits  define  the
+	 interior of  the region;  the 0-bits  define the  exterior of the
+	 region.  The Transparency Mask must have the same ImageLength and
+	 ImageWidth as the main image.
+
+PlanarConfiguration
+Tag  = 284  (11C)
+Type = word
+N    = 1
+Default is 1.
+
+1 =  The sample values for each pixel are stored contiguously, so
+	 that there is a single image plane. See PhotometricInterpretation
+	 to determine the order of the samples within the  pixel data. So, for
+	 RGB data, the data is stored RGBRGBRGB...and so on.
+
+2 =  The samples  are stored  in separate  "sample planes."   The
+	 values in StripOffsets and StripByteCounts are then arranged as a
+	 2-dimensional array, with SamplesPerPixel rows and StripsPerImage
+	 columns.      (All of  the columns  for row  0 are  stored first,
+	 followed   by    the   columns    of   row   1,   and   so   on.)
+	 PhotometricInterpretation describes  the type  of  data  that  is
+	 stored in  each sample  plane.   For example,  RGB data is stored
+	 with the  Red samples  in one sample plane, the Green in another,
+	 and the Blue in another.
+
+	 If SamplesPerPixel  is 1,  PlanarConfiguration is irrelevant, and
+	 should not be included.
+
+Predictor
+Tag  = 317 (13D)
+Type = word
+N    = 1
+Default is 1.
+
+To be used when Compression=5 (LZW).
+
+1 = No prediction scheme used before coding.
+2 = Horizontal differencing. See Appendix I.
+
+ResolutionUnit
+Tag  = 296 (128)
+Type = word
+N    = 1
+Default is 2.
+
+To be used with XResolution and YResolution.
+
+1 =  No absolute  unit of  measurement.  Used for images that may
+	 have a  non-square  aspect  ratio,  but  no  meaningful  absolute
+	 dimensions.   The drawback  of ResolutionUnit=1 is that different
+	 applications will  import the  image at different sizes.  Even if
+	 the decision  is quite  arbitrary, it might be better to use dots
+	 per inch  or  dots  per  centimeter,  and  pick  XResolution  and
+	 YResolution such that the aspect ratio is correct and the maximum
+	 dimension of  the image is about four inches (the "four" is quite
+	 arbitrary.)
+2 = Inch.
+3 = Centimeter.
+
+RowsPerStrip
+Tag  = 278  (116)
+Type = word or dword
+N    = 1
+Default is  2**32 -  1, which  is effectively infinity.  That is,
+the entire  image is  one strip.   Recomended is a strip size of 8K.
+
+The number  of rows  per strip.  The image data is organized into
+strips for  fast access  to individual  rows  when  the  data  is
+compressed - though this field is valid even  if the  data is not
+compressed.
+
+--- SamplesPerPixel
+Tag  = 277  (115)
+Type = word
+N    = 1
+Default = 1.
+
+The number  of samples  per pixel.    SamplesPerPixel  is  1  for
+bilevel, grayscale, and palette color images.  SamplesPerPixel is
+3 for RGB images.
+
+--- StripByteCounts
+Tag  = 279  (117)
+Type = word or dword
+N    = StripsPerImage for PlanarConfiguration equal to 1.
+	 = SamplesPerPixel  * StripsPerImage  for PlanarConfiguration equal to 2
+No default.
+
+For each strip, the number of bytes in that strip.  The existence
+of  this   field  greatly   simplifies  the  chore  of  buffering
+compressed data, if the strip size is reasonable.
+
+--- StripOffsets
+Tag  = 273  (111)
+Type = word or dword
+N    = StripsPerImage for PlanarConfiguration equal to 1.
+	 = SamplesPerPixel  * StripsPerImage  for PlanarConfiguration equal to 2
+No default.
+
+For each  strip, the  byte offset  of that  strip.  The offset is
+specified with  respect to  the beginning of the TIFF file.  Note
+that this  implies that  each strip has a location independent of
+the locations  of other  strips.   This feature may be useful for
+editing applications.  This field is the only way for a reader to
+find the image data, and hence must exist.
+
+--- XResolution
+Tag  = 282  (11A)
+Type = RATIONAL
+N    = 1
+No default.
+
+The number of pixels per ResolutionUnit in the X direction, i.e.,
+in the  ImageWidth direction.
+
+
+--- YResolution
+Tag  = 283  (11B)
+Type = RATIONAL
+N    = 1
+No default.
+
+The number of pixels per ResolutionUnit in the Y direction, i.e.,
+in the ImageLength direction.
+
+--- Artist
+Tag  = 315  (13B)
+Type = ASCII
+
+Person who created the image. Copyright notice.
+
+--- DateTime
+Tag  = 306  (132)
+Type = ASCII
+N    = 20
+
+Date and time of image creation. Uses the format  "YYYY:MM:DD HH:MM:SS", with
+hours on a 24-hour clock, and one space character between the date and the time.
+The length of the string, including the null, is 20 bytes.
+
+--- HostComputer
+Tag  = 316  (13C)
+Type = ASCII
+
+"ENIAC", or whatever.
+
+--- ImageDescription
+Tag  = 270 (10E)
+Type = ASCII
+
+For example,  a user  may wish  to attach a comment such as "1988 company
+picnic" to an image.
+
+--- Make
+Tag  = 271  (10F)
+Type = ASCII
+
+Manufacturer of the scanner, video digitizer, or whatever.
+
+--- Model
+Tag  = 272  (110)
+Type = ASCII
+
+The model name/number of the scanner, video digitizer, or whatever.
+This tag is intended for user information only so format is arbitrary.
+
+--- Software
+Tag  = 305  (131)
+Type = ASCII
+
+Name and  release number of the software package that created the image.
+User information only.
+
+--- Group3Options
+Tag  = 292  (124)
+Type = dword
+N    = 1
+
+Those options are for fax-images stored in TIFF format.
+This  field is  made up  of a set of 32 flag bits. Unused bits are expected
+to be 0. It is probably not safe to try to read the file if any bit of this
+field is set that you don't know the meaning of.
+
+ Bit map :
+ 0 - 2-dimensional coding used.
+ 1 - Image is uncompressed
+ 2 - Fill bits have been added before EOL codes, so that EOL always ends on a
+	 byte boundary.
+
+--- Group4Options
+Tag  =  293  (125)
+Type = dword
+N    = 1
+
+This field is made up of a set of 32 flag bits and is used for the images
+with fax group 4 compression. Unused bits are expected to be 0. It is
+probably not safe to try to read the file if any bit of this field is set
+that you don't know the meaning of. Gray scale and color coding schemes are
+under study, and will be added when finalized.
+
+For 2-D coding, each strip is encoded as if it were a separate image. In
+particular, each strip begins on a byte boundary; and the coding  for the
+first row of a strip is encoded independently of the previous row, using
+horizontal codes, as if the previous row is entirely white. Each strip ends
+with the 24-bit end-of-facsimile block (EOFB).
+
+Bit map :
+		 0 - reserved (unused)
+		 1 - uncompressed mode is used
+	  2-31 - reserved
+
+--- DocumentName
+Tag  = 269  (10D)
+Type = ASCII
+
+The name of the document from which this image was scanned.
+
+--- PageName
+Tag  = 285  (11D)
+Type = ASCII
+
+The name of the page from which this image was scanned.
+
+--- PageNumber
+Tag  = 297  (129)
+Type = word
+N    = 2
+
+This tag is used to specify page numbers of a multiple page (e.g. facsimile)
+document. Two word values are specified. The first value is the page number;
+the second value is the total number of pages in the document. Note that pages
+need not appear in numerical order. The first page is 0 (zero).
+
+--- XPosition
+Tag  = 286  (11E)
+Type = RATIONAL
+
+The X offset of the left side of the image, with respect to the left side of the
+page, in ResolutionUnits.
+
+--- YPosition
+Tag  = 287  (11F)
+Type = RATIONAL
+
+The Y  offset of the top of the image, with respect to the top of the page, in
+ResolutionUnits.  In the TIFF coordinate scheme, the positive Y direction is down,
+so that YPosition is always positive.
+
+--- White Point
+Tag  = 318 (13E)
+Type = RATIONAL
+N    = 2
+Default is the SMPTE white point, D65:  x = 0.313, y = 0.329.
+
+The white  point of the image.  Note that this value is described using the 1931
+CIE xyY chromaticity diagram and only the chromaticity is specified. The
+luminance component is arbitrary and not  specified. This can correspond to the
+white point of a monitor that the image was painted  on, the filter set/light
+source combination of a scanner, or to the white point of the illumination model
+of a rendering package. The ordering is x, y.
+
+
+--- PrimaryChromaticities
+Tag  = 319 (13F)
+Type = RATIONAL
+N    = 6
+Default is the SMPTE primary color chromaticities:
+
+			   Red: x = 0.635 y = 0.340
+			   Green:    x = 0.305 y = 0.595
+			   Blue:     x = 0.155 y = 0.070
+
+The primary  color chromaticities. Note that these values are described using
+the 1931 CIE xyY chromaticity diagram and only the chromaticities  are
+specified.For paint images, these represent the chromaticities of the monitor
+and for scanned images they are derived from the filter set/light source
+combination of a scanner.
+The ordering is red x, red y, green x, green y, blue x, blue y.
+
+--- SubfileType
+Tag  = 255  (FF)
+Type = word
+N    = 1
+
+A general indication of the kind of data that is contained in this subfile.
+Currently defined values are:
+
+1 =  full resolution image data - ImageWidth, ImageLength, and StripOffsets are
+	 required fields
+2 =  reduced resolution image data - ImageWidth, ImageLength, and StripOffsets are
+	 required fields. It is further assumed that a reduced resolution image is a
+	 reduced version of the entire extent of the corresponding full resolution
+	 data.
+3 =  single page of a multi-page image (see the PageNumber tag description).
+
+Continued use of this field is not recommended. Writers should instead use the
+new and more general NewSubfileType field.
+
+--- Orientation
+Tag  = 274 (112)
+Type = word
+N    = 1
+Default is 1.
+
+1 =  The 0th  row represents the visual top of the image, and the 0th column
+	 represents the visual left hand side.
+2 =  The 0th  row represents the visual top of the image, and the 0th column
+	 represents the visual right hand side.
+3 =  The 0th  row represents  the visual bottom of the image, and the 0th column
+	 represents the visual right hand side.
+4 =  The 0th  row represents  the visual bottom of the image, and the 0th column
+	 represents the visual left hand side.
+5 =  The 0th row represents the visual left hand side of the image, and the 0th
+	 column represents the visual top.
+6 =  The 0th row represents the visual right hand side of the image, and the 0th
+	 column represents the visual top.
+7 =  The 0th row represents the visual right hand side of the image, and the 0th
+	 column represents the visual bottom.
+8 =  The 0th row represents the visual left hand side of the image, and the 0th
+	 column represents the visual bottom.
+
+It is extremely costly for most readers to perform image rotation "on the  fly",
+ i.e., when importing and printing; and users of most desktop publishing
+applications do not expect a file imported by the application to be altered
+permanently in any way.
+
+Threshholding
+Tag  = 263  (107)
+Type = word
+N    = 1
+
+1 =  a bilevel "line art"  scan. BitsPerSample must be 1.
+2 =  a "dithered" scan, usually of continuous tone data such as photographs.
+	 BitsPerSample must be 1.
+3 =  Error Diffused.
+
+ColorImageType
+Tag  = 318 (13E)
+Type = word
+N    = 1
+Default is 1.
+
+Gives TIFF color image readers a better idea of what kind of color image it is.  There will be borderline cases.
+
+1 = Continuous tone, natural image.
+2 = Synthetic image, using a greatly restricted range of colors.
+	Such images are produced by most color paint programs. See ColorList for
+	a list of colors used in this image.
+
+ColorList
+Tag  = 319 (13F)
+Type = BYTE or word
+N    = the number of colors that are used in this image, times SamplesPerPixel
+
+A list of colors that are used in this image. Use of this field is only
+practical for images containing a greatly restricted (usually less than or equal
+to 256) range of colors. ColorImageType should be 2. See ColorImageType.
+
+The list is organized as an array of RGB triplets, with no pad. The RGB triplets
+are not guaranteed to be in any particular order. Note that the red, green, and
+blue components can either be a BYTE or a word in length. BYTE should be
+sufficient for most applications.
+
+EXTENSION:TIF,TIFF
+OCCURENCES:PC,MAC,UNIX
+PROGRAMS:Aldus Pagemaker, Paintbrush
+REFERENCE:
+SEE ALSO:
+VALIDATION:

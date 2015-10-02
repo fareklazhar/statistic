@@ -1,0 +1,83 @@
+
+    ID: fdd000133
+    Short name: GIF_89a
+    Content categories: still-image
+    Format Category: encoding, file-format
+    Other facets: unitary, unstructured, sampled
+    Last significant FDD update: 2006-10-04
+    Draft status: Full
+
+
+Identification and description Explanation of format description terms
+Full name 	Graphics Interchange Format, Version 89a
+Description 	Commmonly known as GIF, this is a bitmapped image format widely used on the Web. Options include "progressive display" in which the rendering exploits interlaced lines, permitting recognizable images to appear before the whole file has downloaded; and short animations that exploit multiple images and control data within a single file. GIF uses LZW compression and palette-based color (256 or fewer shades).
+Production phase 	Generally used for middle- and final-state (end-user delivery) purposes.
+Relationship to other formats
+    Has earlier version 	Graphics Interchange Format, version 87a, not documented here
+    Contains 	LZW, LZW Compression Encoding
+
+Local use Explanation of format description terms
+LC experience or existing holdings 	None (or very little)
+LC preference 	TIFF_G4 (for documents) and TIFF_UNC (for documents or pictorial images) are preferred as master images. Future explorations may add J2K_C (JPEG 2000 Part 1, Core Coding System), especially J2K_L_LL (JPEG 2000 Part 1, Core Coding , Lossless Compression) to the Library's list of preferences.
+
+Sustainability factors Explanation of format description terms
+Disclosure 	Proprietary standard, openly described. Originally developed by CompuServe Incorporated, Columbus, Ohio.
+    Documentation 	The specification is available from more than one third party, e.g., W3C (the World Wide Web Consortium).
+Adoption 	Widely adopted. Many software tools exist for encoding and decoding. Natively supported by Web browsers.
+    Licensing and patents 	GIF became notorious in 1994, when UniSys began charging fees to license the LZW compression algorithm. Unisys's US patent expired in June 2003, and its European and Japanese patents expired in June 2004.
+Transparency 	Relatively transparent but depends upon algorithms and tools to read.
+Self-documentation 	None
+External dependencies 	None
+Technical protection considerations 	None
+
+Quality and functionality factors Explanation of format description terms
+Still Image
+Normal rendering 	Good support.
+Clarity (high image resolution) 	Good, within the limits of palette-based color, discussed in the GIF entry in the Wikipedia (as of September 14, 2003). LZW compression is lossless, which supports clarity.
+Color maintenance 	Excellent, since GIF files carry palette information (in terms of RGB values), as internal data. ICC Profile version 4.2.0.0 (Specification ICC.1:2004-10, page 70) provides guidance for embedding ICC profiles in GIF files as Application Extension blocks: "The Application Identifier for an embedded profile shall be the following 8 bytes: 'ICCRGBG1.'"
+Support for vector graphics, including graphic effects and typography 	Not applicable.
+Functionality beyond normal rendering 	GIF 89a supports "alpha channel" information relating to the transparency of colors, although not all browsers support this feature.
+
+File type signifiers Explanation of format description terms
+Tag 	Value 	Note
+Filename extension 	gif
+	 
+Internet Media Type 	image/gif
+	From IANA Image Media Types list and RFC 2046, Internet Engineering Task Force.
+Magic numbers 	Hex: 47 49 46 38 39 61
+ASCII: GIF89a
+	
+
+From Gary Kessler's File Signature Page.
+
+Kessler's page also reports a GIF "trailer" as Hex: 00 3B ASCII: {NUL} ;. The 00 (NUL) marks the end of the image data (content stream) and the semicolon the end of file. See What's In A GIF - Bit by Byte for diagrams of the structure of a GIF file.
+
+Notes Explanation of format description terms
+General 	According to Wikipedia (as of August 29, 2008), "The creators of the format pronounced GIF with a soft "g", /'d??f/, as in "George". However, many people pronounce GIF with a hard "G", as in a 'gift' IPA: /'g?f/, reflecting the way it is pronounced in its own acronym (Graphics Interchange Format)."
+History 	
+
+According to Wikipedia (as of August 29, 2008), "CompuServe introduced the GIF format in 1987 to provide a color image format for their file downloading areas, replacing their earlier run-length encoding (RLE) format, which was black and white only. GIF became popular because it used LZW data compression, which was more efficient than the run-length encoding that formats such as PCX and MacPaint used, and fairly large images could therefore be downloaded in a reasonably short time, even with very slow modems. ... The optional interlacing feature, which stores image scan lines out of order in such a fashion that even a partially downloaded image was somewhat recognizable, also helped GIF's popularity, as a user could abort the download if it was not what was required."
+
+The ironically titled "Sad day . . . GIF patent dead at 20" includes a useful chronology compiled by an individual unhappy with Unisys's patent protections as applied to LZW compression.
+
+The Wikipedia article also includes information about PNG (a format specifically designed to succeed GIF and to avoid patent problems) and MNG (a variant of PNG that supports animation). PNG was never widely adopted, probably because it arrived coincident with the availability of browser support for JFIF (the file format for JPEG_ENC encoding), and because the LZW US patent was scheduled to expire in 2003. MNG was never directly supported in browsers.
+
+Format specifications Explanation of format description terms
+
+    GIF 89a specification (http://www.w3.org/Graphics/GIF/spec-gif89a.txt). Reproduced at W3C site.
+    GIF 89a specification (http://www.nikis.de/181/gif89a.htm). Reproduced at a German Web site.
+
+
+Useful references
+URLs
+
+    Wikipedia GIF entry (http://en.wikipedia.org/wiki/GIF).
+    What's In A GIF (http://www.matthewflickinger.com/lab/whatsinagif/). Description of the format with lots of diagrams.
+    "Sad day . . . GIF patent dead at 20" (http://www.kyzer.me.uk/essays/giflzw/). Example of Web page by person unhappy with Unisys patent policy, 1994-2003. Contains useful chronology.
+    RFC 2046 on MIME Types (http://www.ietf.org/rfc/rfc2046.txt). From Internet Engineering Task Force
+    PRONOM entry for GIF 89a (http://www.nationalarchives.gov.uk/PRONOM/fmt/4). PUID for GIF 89a is fmt/4. PUID for GIF 87a (not described here) is fmt/3.
+    GIF-hul module documentation from JHOVE (http://jhove.sourceforge.net/gif-hul.html).
+    The Encyclopedia of Graphic File Formats, 2nd Edition, 1996 (EGFF) has information on this format. See print citation below. Online access is available at:
+        EGFF: GIF File Format Summary (http://www.fileformat.info/format/gif/egff.htm). From FileFormat.Info. This presentation states that the work has been released under a Creative Commons Attribution license.
+        EGFF: GIF File Format Summary (http://web.archive.org/web/20071210094024/http://www.fileformat.info/format/gif/egff.htm). From FileFormat.Info, via Internet Archive's Wayback Machine. Included because FileFormat.info has not been updated recently (as of November 2012) and was not functioning for a period.
+        EGFF: GIF (http://netghost.narod.ru/gff/graphics/summary/gif.htm). Copy made available from a site in Russia.

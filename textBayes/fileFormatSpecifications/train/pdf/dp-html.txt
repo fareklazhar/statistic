@@ -1,0 +1,131 @@
+
+    ID: fdd000030
+    Short name: PDF
+    Content categories: text, still-image
+    Format Category: file-format, encoding, family
+    Other facets: unitary, binary, symbolic
+    Last significant FDD update: 2012-09-20
+    Draft status: Full
+
+
+Identification and description Explanation of format description terms
+Full name 	PDF (Portable Document Format) Family
+Description 	PDF (Portable Document Format), developed by Adobe Systems Incorporated, is described by Adobe as a general document representation language. PDF represents formatted, page-oriented documents. These documents may be structured or simple. They may contain text, images, graphics, and other multimedia content, such as video and audio. There is support for annotations, metadata, hypertext links, and bookmarks. Later versions provide additional functionalities, for example, to embed geospatial information within documents that represent maps or other geospatial images, such as satellite photographs.
+Production phase 	In general, a final-state format for delivery to end users.
+Relationship to other formats
+    Has subtype 	PDF_1_3, PDF Versions 1.0-1.3
+    Has subtype 	PDF_1_4, PDF Version 1.4
+    Has subtype 	PDF_1_5, PDF, Version 1.5
+    Has subtype 	PDF_1_6, PDF, Version 1.6
+    Has subtype 	PDF_1_7, PDF, Version 1.7 (ISO 32000-1:2008)
+    Has subtype 	PDF_1_7_ext03, PDF, Version 1.7, ExtensionLevel 3
+    Has subtype 	PDF_1_7_ext05, PDF, Version 1.7, ExtensionLevel 5
+    Has subtype 	PDF/X, PDF for Prepress Graphics File Exchange
+    Has subtype 	PDF/A, PDF for Long-term Preservation. As of November 2012, there are three chronological versions of PDF/A.
+    Has subtype 	PDF/A-1, PDF for Long-term Preservation, Use of PDF 1.4
+    Has subtype 	PDF/A-2, PDF/A-2 for Long-term Preservation, Use of ISO 32000-1 (PDF 1.7)
+    Has subtype 	PDF/A-3, PDF/A-3 for Long-term Preservation, Use of ISO 32000-1 (PDF 1.7), with Embedded Files
+    Has subtype 	PDF/UA-1, PDF/UA-1, PDF Enhancement for Accessibility, Use of ISO 32000-1
+    May contain 	PDF_geospatial, PDF, Geospatial encoding (Adobe). Supported by version 1.7 ExtensionLevel 3.
+    May contain 	GeoPDF_2_2, GeoPDF encoding (TerraGo), version 2.2
+
+Local use Explanation of format description terms
+LC experience or existing holdings 	Used as service format, including for some scanned historical materials, primarily to support convenient downloading and printing. Acceptable format for copyright registration.
+LC preference 	
+
+The Library of Congress expresses preferences for formats for content (primarily in physical form) for its collections through the "Best Edition" specification from the U.S. Copyright Office in Circular 7b. Rev: 08 / 2010 of Circular 7b lists formats acceptable for mandatory deposit of Electronic Serials available only online, in order of preference. For page-oriented renditions, PDF/A (the PDF/A-1 format or later versions) appears first on the list. Other forms of PDF are acceptable, preferably with searchable text.
+
+In general, PDF is not a preferred format for images. For text, PDF/A is preferred over other PDF variants. PDF/X may be appropriate if used by creator or publisher during production.
+
+Sustainability factors Explanation of format description terms
+Disclosure 	
+
+Fully documented. Most members of the PDF family were developed by Adobe Systems Incorporated, which makes the specifications available openly and at no charge. Several members of the family have been adopted as ISO international standards, e.g,. PDF/X (ISO 15930), PDF/A (ISO 19005), and PDF version 1.7 (ISO 32000-1:2008). Additional information about specifications and standardization is provided in the format descriptions for several of the subtypes.
+    Documentation 	Adobe provides documentation for the current version at http://www.adobe.com/devnet/pdf/pdf_reference.html and an archive of earlier versions at http://www.adobe.com/devnet/pdf/pdf_reference_archive.html.
+Adoption 	Extremely widely adopted as a platform-independent format for disseminating page-oriented documents. Adobe Reader software for viewing PDF files is freely distributed and bundled with most personal computers.
+    Licensing and patents 	
+
+Adobe has a number of patents covering technology that is disclosed in the Portable Document Format (PDF) Specification, version 1.3 and later.
+
+A summary of information on the Adobe Web site in September 2010 (see http://partners.adobe.com/public/developer/support/topic_legal_notices.html) follows.
+
+To promote the use of PDF for information interchange the following patents are licensed by Adobe on a royalty-free, non-exclusive basis for the term of each patent for developing software that produces, consumes, and interprets PDF files : 5,634,064 (filed 1996-08-02, granted 1997-05-27); 5,737,599 (filed 1995-12-07, granted 1998-04-07); 5,781,785 (filed 1995-09-26, granted 1998-07-14); 5,819,301 (filed 1997-09-09, granted 1998-10-06); 6,028,583 (filed 1998-01-16, granted 2002-02-22); 6,289,364 (filed 1997-12-22, granted 2001-09-11); 6,421,460 (filed 1999-05-06, granted 2002-07-16). Patent 5,860,074 (filed 1997-08-14, granted 1999-01-12) is similarly licensed on a royalty-free, non-exclusive basis for its term but only for the purpose of developing software that produces PDF files (thus specifically excluding software that consumes and/or interprets PDF files).
+
+Adobe Reader displays additional patent numbers on launch.
+
+In association with the adoption of PDF, version 1.7 as an ISO standard (ISO 32000-1:2008), Adobe issued a Public Patent License, granting "every individual and organization in the world the royalty-free right, under all Essential Claims that Adobe owns, to make, have made, use, sell, import and distribute Compliant Implementations." This document is not currently available on the Adobe website; the link is via Internet Archive.
+Transparency 	Depends upon compliant software tools to read. Building tools requires sophistication.
+Self-documentation 	Later versions of PDF can include XMP metadata packages.
+External dependencies 	Faithful rendering requires that fonts be embedded. PDF/A, intended for archival purposes, and PDF/X, for prepess exchange, require that fonts be embedded.
+Technical protection considerations 	The PDF format offers several forms of technical protection, including encryption, that would prevent custodians of digital content ensuring accessibility in future technological environments.
+
+Quality and functionality factors Explanation of format description terms
+Still Image
+Normal rendering 	PDF is designed for page-oriented documents. Scaling, zooming, printing are expected functionalities for PDF viewers. The quality of raster images depend on the quality of the embedded image. Note that, in general, PDF is not a preferred archival or master format for images.
+Clarity (high image resolution) 	High-resolution images can be embedded using professional tools. See PDF/X, a standard version of PDF used by the printing industry.
+Color maintenance 	Parameters to support color management, including CIE-based and ICC-based color spaces, can be stored in the file using professional tools. See PDF/X, a standard version of PDF used by the printing industry.
+Support for vector graphics, including graphic effects and typography 	Extensive support for graphic elements. Versions after PDF 1.4 support a transparent imaging model in addition to the opaque model used for earlier versions. Hence images composed of layers can be stored without pre-composing into a single image.
+Support for multispectral bands 	TBD
+Functionality beyond normal rendering 	PDF has extensive support for annotations of several types. PDF, Version 1.7, ExtensionLevel 3 (PDF_1_7_ext03), introduced with Acrobat 9.0, supports capabilities for embedding data in association with points within 3D and geospatial images.
+Text
+Normal rendering 	
+
+Good support is possible, but not guaranteed. The PDF format allow creators to disallow printing and extraction of text for quotations. PDF can also be used to create documents from scanned page images; such files do not necessarily support indexing of the document text.
+
+Although for most PDFs that do incorporate character-based text, the text can be reliably extracted and indexed, problems can occur, because the PDF internal structure for text is based primarily on identification of glyphs within fonts and not on Unicode code points. If Unicode code points are not present, perhaps in order to make the file as small as possible, extracted text will be unintelligible. See Why is the extraction of text from a PDF document such a hassle?, a blog post by Dr. Hans Bärfuss of pdf-tools.com.
+Integrity of document structure 	The logical structure of a document is only represented in a PDF file if the creator or process during creation takes steps to incorporate structural tagging.
+Integrity of layout and display 	PDF is designed to represent the layout of page-oriented documents.
+Support for mathematics, formulae, etc. 	Can be represented by embedded graphics.
+Functionality beyond normal rendering 	Supports embedding of media objects (in binary format) and links to external media objects, such as images, audio, or video.
+
+File type signifiers Explanation of format description terms
+Tag 	Value 	Note
+Filename extension 	pdf
+	 
+Internet Media Type 	application/pdf
+	From LC web server configuration (Apache) of 2004-04-28. Registered with IANA (see Application Media-Types) and described in IETF (Internet Engineering Task Force) RFC 3778. Reported for PDF files by JHOVE PDF-hul module for file identification.
+Internet Media Type 	application/x-pdf
+application/acrobat
+application/vnd.pdf
+text/pdf
+text/x-pdf
+	Selected media types listed at The File Extension Source.
+Magic numbers 	Hex: 25 50 44 46
+ASCII: %PDF
+	From Gary Kessler's File Signatures Table.
+
+Notes Explanation of format description terms
+General 	
+
+The topic of the maximum size for PDFs has been discussed in a number of online forums. At one Adobe forum http://forums.adobe.com/thread/1041350 (consulted in September 2012), a very high theoretical page-count limit is described: "There's no explicit page number limit but there is a limit on indirect objects of 8,388,607 in a 32-bit PDF rendering application--Acrobat and Adobe Reader are both 32-bit code--and because each page consumes at least one indirect object, every PDF file created by or opened by Acrobat must have less pages than that. If you were to create a native x64 PDF application you could add more pages, but the resulting files wouldn't open at all in 32-bit apps." This forum entry goes on to say, "Architecturally there is only one limit in the PDF standard: the overall file size must be below ~10GB as the cross-reference tables which define the PDF structure use 10 bits."
+
+The preceding paragraph offers a generous view of the potential size for a PDF. Many commentators argue that the limit for practicality is lower than those stated above. What matters is whether you can open a given PDF in any reasonable application, including Acrobat and Adobe Reader, mentioned above. Online forums also include reports like these examples: "It seems that the iPad has a limit of 30MB for displaying PDF files," and "users of GoodReader have reported flawless performance with files over 1 gig in size." The practical limits imposed by applications might also include limits set by indexers if the PDF includes searchable text.
+
+In October 2009, ISO authorized a new project to develop the PDF 2.0 standard, to be ISO 32000-2. According to the ISO web site as of September 20, 2012, the ballot on ISO DIS (Draft International Standard) 32000-2 closed during August 2012.
+History 	
+
+Adapted from PDF Reference, Third Edition: The origins of PDF and the Adobe Acrobat product family date to early 1990. At that time, the PostScript page description language was rapidly becoming the worldwide standard for the production of the printed page. PDF builds on the PostScript page description language by layering a document structure and interactive navigation features on PostScript's underlying imaging model, providing a convenient, efficient mechanism enabling documents to be reliably viewed and printed anywhere.
+
+See descriptions for chronological versions for later history.
+
+Format specifications Explanation of format description terms
+
+    Adobe PDF Specification. (http://www.adobe.com/devnet/pdf/pdf_reference.html). This page provides access to the most current PDF specification, with errata and supplements provided as appropriate.
+    Adobe PDF Reference Archives. (http://www.adobe.com/devnet/pdf/pdf_reference_archive.html). Specifications for earlier versions of PDF, starting with Version 1.3.
+    Adobe PDF Reference from Adobe Acrobat Engineering (http://acroeng.adobe.com/wp/?page_id=321). All PDF specifications from Adobe in a single location, originally compiled in January 2014.
+
+
+Useful references
+URLs
+
+    Portable Document Format from Wikipedia (http://en.wikipedia.org/wiki/Portable_Document_Format).
+    Home of the Acrobat & Reader Engineering team (http://acroeng.adobe.com/wp/). Detailed information and guidance on important aspects of PDF, such as linearization (Fast Web View) and standards-compliant approaches to viewing PDF/A and PDF/X files.
+    Documentation for PDF from GNU PDF (http://www.gnupdf.org/Category:PDF).
+    JHOVE PDF-hul Module (http://jhove.sourceforge.net/pdf-hul.html).
+    Registration for application/pdf Media Type (http://www.ietf.org/rfc/rfc3778.txt).
+    Why is the extraction of text from a PDF document such a hassle? (http://blog.pdf-tools.com/2014/01/why-is-extraction-of-text-from-pdf.html). January 2014 blog post from pdf-tools.com
+    PDF/A, UA, X, VT and E (explanation from Luratech) (http://www.luratech.com/en/subscribe-to-newsletter/detail-vr/article/pdfa-ua-x-vt-and-e/).
+
+
+
+

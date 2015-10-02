@@ -1,0 +1,66 @@
+
+\begin{table}[!hb] \centering \tiny 
+	\captionsetup{justification=centering}
+	\caption{The Modified Standard Scores for Two Selected Expert Risk Profiles.} 
+	\vskip 10pt	
+	\begin{tabular}{|c|c|c|c|c|c|l|} \hline 
+	Nr & Risk Factors & E3 & E5 & MSS3 & MSS5 & Difference \\ \hline 
+	1 & Compression & 1 & 2 & -1,75 & 0 & -1,75 \\ \hline 
+	2 & Metadata Support & 1 & 2 & -1,75 & 0 & -1,75 \\ \hline 
+	3 & Value & 2 & 3 & 0 & 1,56 & -1,56 \\ \hline 
+	4 & Specification Quality & 2 & 3 & 0 & 1,56 & -1,56 \\ \hline
+	5 & Ease Of Validation & 2 & 3 & 0 & 1,56 & -1,56 \\ \hline 
+	6 & Ease Of Identification & 2 & 3 & 0 & 1,56 & -1,56 \\ \hline 
+	7 & Viruses & 1 & 1 & -1,75 & -1,56 & -0,19 \\ \hline 
+	8 & Institutional Policies & 1 & 1 & -1,75 & -1,56 & -0,19 \\ \hline  
+	9 & Storage Space & 1 & 1 & -1,75 & -1,56 & -0,19 \\ \hline 
+	10 & Availability Online & 2 & 2 & 0 & 0 & 0 \\ \hline 
+	11 & Cost & 2 & 2 & 0 & 0  & 0 \\ \hline 
+	12 & Complexity & 2 & 2 & 0 & 0 & 0 \\ \hline 
+	13 & Expertise Available & 2 & 2 & 0 & 0 & 0 \\ \hline 
+	14 & Revision Rate & 2 & 2 & 0 & 0 & 0 \\ \hline 
+	15 & Technical Protection Mechanism & 2 & 2 & 0 & 0 & 0 \\ \hline 
+	16 & Rendering Software Available & 3 & 3 & 1,75 & 1,56 & 0,19 \\ \hline 
+	17 & Specification Available & 3 & 3 & 1,75 & 1,56 & 0,19 \\ \hline 
+	18 & Backward/forward Compatibility & 3 & 3 & 1,75 & 1,56 & 0,19 \\ \hline 
+	19 & Error Tolerance & 3 & 3 & 1,75 & 1,56 & 0,19 \\ \hline 
+	20 & Life Time & 2 & 1 & 0 & -1,56 & 0,19 \\ \hline 
+	21 & Community 3D Support & 2 & 1 & 0 & -1,56 & 1,56 \\ \hline 
+	22 & Domain Specificity  & 3 & 2 & 1,75 & 0 & 1,56 \\ \hline 
+	23 & Ubiquity & 3 & 2 & 1,75 & 0 & 1,75 \\ \hline 
+	24 & Developer Support & 3 & 1 & 1,75 & -1,56 & 1,75 \\ \hline 
+	25 & Legal Restrictions & 3 & 1 & 1,75 & -1,56 & 3,31 \\ \hline 
+	26 & Standardization & 3 & 1 & 1,75 & -1,56 & 3,31 \\ \hline 
+	27 & Technical Dependencies & 3 & 1 & 1,75 & -1,56 & 3,31 \\ \hline 
+	28 & Geographical Spread & 3 & 1 & 1,75 & -1,56 & 3,31 \\ \hline 
+	\end{tabular}
+	\label{tab:mss} 
+	\vskip 10pt	
+\end{table}	
+
+
+Risk Level	Value	Geographical spread	Domain Specificity	Viruses	Availability Online	Institutional policies	Specification Quality	Backward/Forward Compatibility	Community 3D Support	Complexity	Compression	Cost	Developer Support	Ease Of Identification	Ease Of Validation	Error Tolerance	Expertise Available	Legal Restrictions	Life Time	Metadata Support	Rendering Software Available	Revision Rate	Specification Available	Standardization	Storage Space	Technical Dependencies	Technical Protection Mechanism	Ubiquity
+Low	2	2	1	1	2	2	2	2	3	2	2	3	1	1	1	1	2	2	1	1	3	1	3	2	1	2	3	3	1	52
+M	1	1	2	2	2	1	2	3	3	3	1	3	2	2	2	2	3	3	3	1	3	2	3	2	1	3	1	3	2	60
+M	2	3	3	1	2	1	2	3	2	2	1	2	3	2	2	3	2	3	2	1	3	2	3	3	1	3	2	3	3	62
+H	3	1	2	1	3	2	3	2	3	3	2	3	2	3	3	3	3	3	2	2	3	2	3	3	1	2	2	2	4	67
+Low	3	1	2	1	2	1	3	3	1	2	2	2	1	3	3	3	2	1	1	2	3	2	3	1	1	1	2	2	5	54
+Low	1	1	2	2	1	2	1	3	2	2	1	1	1	3	2	2	3	3	1	1	3	2	3	2	2	3	1	3	6	54
+Low	1	2	2	2	1	2	3	2	3	2	1	2	1	2	2	1	3	2	1	1	3	2	3	2	1	2	1	2	7	52
+M	1	1	1	1	1	1	2	3	3	3	2	3	2	2	2	3	3	2	2	3	3	2	3	3	2	2	1	3	8	60
+M	3	2	2	1	1	3	3	2	3	3	1	2	2	3	3	1	3	2	2	2	3	2	3	2	2	3	2	2	9	63
+H	2	1	2	1	1	2	2	3	3	3	3	2	3	2	3	1	3	3	3	2	2	3	3	3	1	3	3	3	10	66
+	
+	
+Risk Level	Value	Geographical spread	Domain Specificity	Viruses	Availability Online	Institutional policies	Specification Quality	Backward/Forward Compatibility	Community 3D Support	Complexity	Compression	Cost	Developer Support	Ease Of Identification	Ease Of Validation	Error Tolerance	Expertise Available	Legal Restrictions	Life Time	Metadata Support	Rendering Software Available	Revision Rate	Specification Available	Standardization	Storage Space	Technical Dependencies	Technical Protection Mechanism	Ubiquity
+Low	2	2	1	1	2	2	2	2	3	2	2	3	1	1	1	1	2	2	1	1	3	1	3	2	1	2	3	3	1	52
+Low	3	1	2	1	2	1	3	3	1	2	2	2	1	3	3	3	2	1	1	2	3	2	3	1	1	1	2	2	5	54
+Low	1	1	2	2	1	2	1	3	2	2	1	1	1	3	2	2	3	3	1	1	3	2	3	2	2	3	1	3	6	54
+Low	1	2	2	2	1	2	3	2	3	2	1	2	1	2	2	1	3	2	1	1	3	2	3	2	1	2	1	2	7	52
+M	1	1	2	2	2	1	2	3	3	3	1	3	2	2	2	2	3	3	3	1	3	2	3	2	1	3	1	3	2	60
+M	2	3	3	1	2	1	2	3	2	2	1	2	3	2	2	3	2	3	2	1	3	2	3	3	1	3	2	3	3	62
+M	1	1	1	1	1	1	2	3	3	3	2	3	2	2	2	3	3	2	2	3	3	2	3	3	2	2	1	3	8	60
+M	3	2	2	1	1	3	3	2	3	3	1	2	2	3	3	1	3	2	2	2	3	2	3	2	2	3	2	2	9	63
+H	3	1	2	1	3	2	3	2	3	3	2	3	2	3	3	3	3	3	2	2	3	2	3	3	1	2	2	2	4	67
+H	2	1	2	1	1	2	2	3	3	3	3	2	3	2	3	1	3	3	3	2	2	3	3	3	1	3	3	3	10	66
+	
